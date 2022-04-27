@@ -7,7 +7,7 @@ public class Project {
     private DateTimeFormatter lastEdited;
 
     /**
-     * Method to create new project
+     * Class constructor to create project
      * @param title project title
      * @param creator project creator
      */

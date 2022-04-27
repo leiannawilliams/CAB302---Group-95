@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="classes for maze program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/mazeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mazeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/standardMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/standardMazeCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/MazeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mazeList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mazeList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="CAB302---Group-95" />
@@ -63,8 +56,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Maze" />
+      <module name="CAB302---Group-95" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Maze" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
