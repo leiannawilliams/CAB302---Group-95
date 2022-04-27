@@ -2,14 +2,16 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class mazeCreator extends menu{
+public class mazeCreator extends menu {
 
     public static void createMazeCreator(){
 
-        JFrame mazeCreator = new JFrame("Maze Creator");
-        mazeCreator.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mazeCreator.setPreferredSize(new Dimension(600, 500));
+        JFrame mazeCreatorFrame = new JFrame("Maze Creator");
+        mazeCreatorFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mazeCreatorFrame.setPreferredSize(new Dimension(600, 500));
 
         // Content pane for maze editor
         JTabbedPane mazeEditor = new JTabbedPane();
@@ -32,13 +34,15 @@ public class mazeCreator extends menu{
         mazeEditor.add("Details", detailsPanel);
         mazeEditor.add("Style", stylePanel);
 
-        mazeCreator.add(mazeEditor);
+        mazeCreatorFrame.add(mazeEditor);
 
         // Content panel for viewing maze
         JPanel mazePanel = new JPanel(new GridLayout(6, 2));
 
-        mazeCreator.pack();
-        mazeCreator.setVisible(true);
+        mazeCreatorFrame.pack();
+        mazeCreatorFrame.setLocationRelativeTo(null);
+        mazeCreatorFrame.setVisible(true);
 
     }
+
 }
