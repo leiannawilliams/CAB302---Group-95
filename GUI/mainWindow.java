@@ -19,7 +19,7 @@ public class mainWindow extends menu {
         JLabel title = new JLabel("Maze Editor");
         title.setFont(new Font ("Serif", Font.BOLD, 60));
         JButton newProjectBtn = new JButton("New Project");
-        JButton openProjectBtn = new JButton("Open Project");
+        JButton viewProjectsBtn = new JButton("View Projects");
 
         // Main Panel so components are easily centered and organised
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -35,20 +35,53 @@ public class mainWindow extends menu {
         //Creating buttons and label in a JPanel
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.add(newProjectBtn);
-        buttonsPanel.add(openProjectBtn);
+        buttonsPanel.add(viewProjectsBtn);
         mainPanel.add(buttonsPanel);
+
+
+        //CREATING POPUP TO CREATE NEW MAZE
+        // Main popup panel (incorporates both textPanel and difficultyPanel)
+        JPanel popupPanel = new JPanel(new BorderLayout());
+        // Panel for Project Title and Author
+        JPanel textPanel = new JPanel(new GridLayout(2,2));
+        textPanel.add(new JLabel("Project Title:"));
+        JTextField titleField = new JTextField(14);
+        textPanel.add(titleField);
+        textPanel.add(new JLabel("Project Author:"));
+        JTextField authorField = new JTextField(14);
+        textPanel.add(authorField);
+        popupPanel.add(textPanel, BorderLayout.NORTH);
+        // Panel for difficulty selection buttons
+        JPanel difficultyPanel = new JPanel();
+        difficultyPanel.add(new JLabel("Select Difficulty:"));
+        JRadioButton standardMazeBtn = new JRadioButton("Standard");
+        difficultyPanel.add(standardMazeBtn);
+        JRadioButton simpleMazeBtn = new JRadioButton("Simple");
+        difficultyPanel.add(simpleMazeBtn);
+        popupPanel.add(difficultyPanel, BorderLayout.CENTER);
 
         // 'New Project' button functionality
         newProjectBtn.addActionListener(e -> {
-            mainWindowFrame.setVisible(false);
-            mazeCreator.createMazeCreator();
+            int result = JOptionPane.showConfirmDialog(null, popupPanel,
+                    "Create New Project", JOptionPane.OK_CANCEL_OPTION);
+            if (result == JOptionPane.OK_OPTION) {
+                mainWindowFrame.setVisible(false);
+                mazeCreator.createMazeCreator();
+            }
         });
 
+
+        // 'Open Project' button functionality
+        viewProjectsBtn.addActionListener(e -> {
+            mainWindowFrame.setVisible(false);
+            mazeList.createMazeList();
+        });
 
         mainWindowFrame.pack();
         mainWindowFrame.setLocationRelativeTo(null);
         mainWindowFrame.setVisible(true);
 
     }
+
 
 }

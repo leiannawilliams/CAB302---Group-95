@@ -10,8 +10,9 @@ public class menu extends JFrame{
         JMenuBar menuBar = new JMenuBar();
         // File Menu
         JMenu fileMenu = new JMenu("File");
+        fileMenu.add("Main Menu");
         fileMenu.add("New Project");
-        fileMenu.add("Open Project");
+        fileMenu.add("View Projects");
         fileMenu.add("Save");
         fileMenu.add("Export");
         menuBar.add(fileMenu);

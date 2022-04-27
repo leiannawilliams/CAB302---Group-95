@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="classes for maze program">
+      <change afterPath="$PROJECT_DIR$/GUI/mazeList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/mazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mazeCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/EventHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mainWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mazeCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

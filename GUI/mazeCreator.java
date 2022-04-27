@@ -2,8 +2,6 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class mazeCreator extends menu {
 
@@ -12,6 +10,9 @@ public class mazeCreator extends menu {
         JFrame mazeCreatorFrame = new JFrame("Maze Creator");
         mazeCreatorFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mazeCreatorFrame.setPreferredSize(new Dimension(600, 500));
+
+        // Adding menu bar to frame
+        mazeCreatorFrame.setJMenuBar(menu.createMenuBar());
 
         // Content pane for maze editor
         JTabbedPane mazeEditor = new JTabbedPane();
