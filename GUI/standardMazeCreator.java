@@ -3,9 +3,9 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class mazeCreator extends menu {
+public class standardMazeCreator extends menu {
 
-    public static void createMazeCreator(){
+    public static void createStandardMaze(){
 
         JFrame mazeCreatorFrame = new JFrame("Maze Creator");
         mazeCreatorFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -26,9 +26,7 @@ public class mazeCreator extends menu {
 
         // Style tab contents
         JPanel stylePanel = new JPanel();
-        stylePanel.add(new JLabel("Start image: "));
-        stylePanel.add(new JButton("Browse"));
-        stylePanel.add(new JLabel("End image: "));
+        stylePanel.add(new JLabel("Logo image: "));
         stylePanel.add(new JButton("Browse"));
 
         // Add tabbed panes
@@ -42,6 +40,7 @@ public class mazeCreator extends menu {
 
         mazeCreatorFrame.pack();
         mazeCreatorFrame.setLocationRelativeTo(null);
+        mazeCreatorFrame.setResizable(false);
         mazeCreatorFrame.setVisible(true);
 
     }

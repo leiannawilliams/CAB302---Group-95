@@ -52,12 +52,17 @@ public class mainWindow extends menu {
         textPanel.add(authorField);
         popupPanel.add(textPanel, BorderLayout.NORTH);
         // Panel for difficulty selection buttons
-        JPanel difficultyPanel = new JPanel();
-        difficultyPanel.add(new JLabel("Select Difficulty:"));
-        JRadioButton standardMazeBtn = new JRadioButton("Standard");
+        JPanel difficultyPanel = new JPanel(new GridLayout(1,3));
+        difficultyPanel.add(new JLabel("Difficulty:"));
+        JRadioButton standardMazeBtn = new JRadioButton("Standard Maze");
         difficultyPanel.add(standardMazeBtn);
-        JRadioButton simpleMazeBtn = new JRadioButton("Simple");
+        JRadioButton simpleMazeBtn = new JRadioButton("Simple Maze");
         difficultyPanel.add(simpleMazeBtn);
+        // Buttongroup So only one JRadioButton can be selected at a time
+        ButtonGroup difficultyButtons = new ButtonGroup();
+        difficultyButtons.add(standardMazeBtn);
+        difficultyButtons.add(simpleMazeBtn);
+
         popupPanel.add(difficultyPanel, BorderLayout.CENTER);
 
         // 'New Project' button functionality
@@ -65,8 +70,17 @@ public class mainWindow extends menu {
             int result = JOptionPane.showConfirmDialog(null, popupPanel,
                     "Create New Project", JOptionPane.OK_CANCEL_OPTION);
             if (result == JOptionPane.OK_OPTION) {
-                mainWindowFrame.setVisible(false);
-                mazeCreator.createMazeCreator();
+                if(standardMazeBtn.isSelected()){
+                    mainWindowFrame.setVisible(false);
+                    standardMazeCreator.createStandardMaze();
+                }
+                else if(simpleMazeBtn.isSelected()){
+                    mainWindowFrame.setVisible(false);
+                    simpleMazeCreator.createSimpleMaze();
+                }
+                else if(!simpleMazeBtn.isSelected() && !standardMazeBtn.isSelected()){
+                    JOptionPane.showMessageDialog(null, "Error: Please choose a maze difficulty.");
+                }
             }
         });
 
