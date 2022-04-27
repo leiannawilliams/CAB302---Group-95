@@ -2,7 +2,7 @@ package GUI;
 
 import javax.swing.*;
 
-public class menu extends JFrame{
+public abstract class menu extends JFrame{
 
 
     public static JMenuBar createMenuBar(){
@@ -27,5 +27,4 @@ public class menu extends JFrame{
         menuBar.add(helpMenu);
         return menuBar;
     }
-
 }

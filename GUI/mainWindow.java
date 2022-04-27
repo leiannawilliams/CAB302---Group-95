@@ -93,6 +93,7 @@ public class mainWindow extends menu {
 
         mainWindowFrame.pack();
         mainWindowFrame.setLocationRelativeTo(null);
+        mainWindowFrame.setResizable(false);
         mainWindowFrame.setVisible(true);
 
     }
