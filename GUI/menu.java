@@ -5,7 +5,6 @@ import javax.swing.*;
 public class menu extends JFrame{
 
 
-
     public static JMenuBar createMenuBar(){
         // CREATE MENU BAR
         JMenuBar menuBar = new JMenuBar();
