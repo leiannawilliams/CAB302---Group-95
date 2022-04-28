@@ -9,6 +9,16 @@ public class Maze{
     int finishPos = 50;
     ArrayList<Integer> walls = null;
 
+    /**
+     * The Maze class consists of all the required parameters to create the maze.
+     * @width width of the maze as an integer.
+     * @height height of the maze as an integer.
+     * @col number of column cells in the maze with a maximum of 100 cells.
+     * @rows number of row cells in the maze with a maximum of 100 cells.
+     * @neighbours ?
+     * @visitedCells ?
+     */
+
     public static void drawGrid(Graphics grid){
         grid.setColor(Color.BLACK);
         grid.drawLine(0, 0, 200, 10);
