@@ -23,13 +23,13 @@ public class mazeList extends menu {
         JLabel title = new JLabel(" List of Mazes");
         title.setFont(new Font ("Serif", Font.BOLD, 40));
         titlePanel.add(title);
-        String sortBy[] = {"Title", "Author", "Date Created", "Date Last Edited"};
+        String[] sortBy = {"Title", "Author", "Date Created", "Date Last Edited"};
 
         JPanel comboPanel = new JPanel();
         JLabel sortByLabel = new JLabel("Sort by:");
         comboPanel.add(sortByLabel);
         sortByLabel.setFont(new Font ("Serif", Font.BOLD, 16));
-        JComboBox mazeComboBox = new JComboBox(sortBy);
+        JComboBox<String> mazeComboBox = new JComboBox<>(sortBy);
         comboPanel.add(mazeComboBox);
         titlePanel.add(comboPanel);
         mainPanel.add(titlePanel);
@@ -48,7 +48,7 @@ public class mazeList extends menu {
 
         DefaultTableModel mazeTableModel = new DefaultTableModel(data, columns);
         JTable mazeJTable = new JTable(mazeTableModel) {
-            public Class getColumnClass(int column) {
+            public Class<?> getColumnClass(int column) {
                 return getValueAt(0, column).getClass();
             }
         };
