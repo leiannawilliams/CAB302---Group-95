@@ -70,7 +70,10 @@ public class mainWindow extends menu {
             int result = JOptionPane.showConfirmDialog(null, popupPanel,
                     "Create New Project", JOptionPane.OK_CANCEL_OPTION);
             if (result == JOptionPane.OK_OPTION) {
-                if(standardMazeBtn.isSelected()){
+                 if(titleField.getText().isBlank() || authorField.getText().isBlank()){
+                    JOptionPane.showMessageDialog(null, "Error: PLease fill out fields before proceeding.");
+                }
+                else if(standardMazeBtn.isSelected()){
                     mainWindowFrame.setVisible(false);
                     standardMazeCreator.createStandardMaze();
                 }
@@ -91,12 +94,19 @@ public class mainWindow extends menu {
             mazeList.createMazeList();
         });
 
+        // Read input from title field
+        titleField.addActionListener(e -> titleField.getText());
+
+        // Read input from author field
+        authorField.addActionListener(e -> authorField.getText());
+
+        // Create a new project
+        //Project project = new Project(titleField, authorField);
+
         mainWindowFrame.pack();
         mainWindowFrame.setLocationRelativeTo(null);
         mainWindowFrame.setResizable(false);
         mainWindowFrame.setVisible(true);
 
     }
-
-
 }
