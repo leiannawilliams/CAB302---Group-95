@@ -1,7 +1,10 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.io.File;
 
 public class standardMazeCreator extends menu {
 
@@ -27,7 +30,7 @@ public class standardMazeCreator extends menu {
         // Details contents
         JPanel detailsPanel = new JPanel(new GridLayout(4,2));
         detailsPanel.setBorder(BorderFactory.createTitledBorder("Details"));
-        ((javax.swing.border.TitledBorder) detailsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
+        ((TitledBorder) detailsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
         detailsPanel.add(new JLabel("Project Title: "));
         JTextField titleField = new JTextField(14);
         titleField.setText("Awesome Maze"); // temporary dummy data
@@ -50,10 +53,15 @@ public class standardMazeCreator extends menu {
         // Style contents
         JPanel stylePanel = new JPanel(new GridLayout(1,1));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
-        ((javax.swing.border.TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 16));
+        ((TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 16));
         JLabel imageText = new JLabel("  Logo Image:");
-        imageText.setFont(new Font ("Serif", Font.PLAIN, 26));
+        imageText.setFont(new Font ("Serif", Font.PLAIN, 20));
         stylePanel.add(imageText);
+        JPanel selectedImgPanel = new JPanel();
+        selectedImgPanel.setLayout(new GridBagLayout());
+        JTextField selectedImg = new JTextField("Browse for image");
+        selectedImgPanel.add(selectedImg);
+        stylePanel.add(selectedImgPanel);
         JPanel browseButtonPanel = new JPanel();
         browseButtonPanel.setLayout(new GridBagLayout());
         JButton browseButton = new JButton("Browse");
@@ -64,7 +72,7 @@ public class standardMazeCreator extends menu {
         //Metrics contents
         JPanel metricsPanel = new JPanel(new GridLayout(3,1));
         metricsPanel.setBorder(BorderFactory.createTitledBorder("Metrics"));
-        ((javax.swing.border.TitledBorder) metricsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
+        ((TitledBorder) metricsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
         metricsPanel.add(new JLabel("Percentage of cells that are reached by an optimal solution: 50%")); // temporary dummy data
         metricsPanel.add(new JLabel("Percentage of cells that are dead ends: 12%")); // temporary dummy data
         JCheckBox solutionCheckBox = new JCheckBox("Show Optimal Maze Solution");
@@ -93,6 +101,24 @@ public class standardMazeCreator extends menu {
         mazeSplitPane.setOrientation(SwingConstants.VERTICAL);
         mazeSplitPane.setDividerLocation(400);
         mazeCreatorFrame.add(mazeSplitPane);
+
+
+        // 'browse' button functionality - browse for image
+        browseButton.addActionListener(e-> {
+            JFileChooser imgChooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Image (jpeg, jpg, png)", "jpeg", "jpg", "png");
+            imgChooser.addChoosableFileFilter(filter);
+            // Open selected image
+            int returnVal = imgChooser.showOpenDialog(imgChooser);
+            if(returnVal == JFileChooser.APPROVE_OPTION){
+                File image = new File(imgChooser.getSelectedFile().getAbsolutePath());
+                selectedImg.setText(image.getAbsolutePath());
+            }
+            // Cancel selecting image
+            else if (returnVal == JFileChooser.CANCEL_OPTION){
+                selectedImg.setText("No image selected");
+            }
+        });
 
 
         mazeCreatorFrame.pack();
