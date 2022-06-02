@@ -1,13 +1,17 @@
 package GUI;
 
+import Project.*;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class mainWindow extends menu {
 
-    public void createMainWindow() {
+    static String projectTitle = null;
+    static String projectAuthor = null;
+    public static Project project = new Project(projectTitle, projectAuthor);
 
+    public void createMainWindow(Project project) {
         JFrame mainWindowFrame = new JFrame("Maze Creator");
         mainWindowFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindowFrame.setPreferredSize(new Dimension(600, 500));
@@ -69,6 +73,8 @@ public class mainWindow extends menu {
         newProjectBtn.addActionListener(e -> {
             int result = JOptionPane.showConfirmDialog(null, popupPanel,
                     "Create New Project", JOptionPane.OK_CANCEL_OPTION);
+            projectTitle = project.setTitle(titleField.getText());
+            projectAuthor = project.setAuthor(authorField.getText());
             if (result == JOptionPane.OK_OPTION) {
                  if(titleField.getText().isBlank() || authorField.getText().isBlank()){
                     JOptionPane.showMessageDialog(null, "Error: PLease fill out fields before proceeding.");
@@ -93,15 +99,6 @@ public class mainWindow extends menu {
             mainWindowFrame.setVisible(false);
             mazeList.createMazeList();
         });
-
-        // Read input from title field
-        titleField.addActionListener(e -> titleField.getText());
-
-        // Read input from author field
-        authorField.addActionListener(e -> authorField.getText());
-
-        // Create a new project
-        //Project project = new Project(titleField, authorField);
 
         mainWindowFrame.pack();
         mainWindowFrame.setLocationRelativeTo(null);

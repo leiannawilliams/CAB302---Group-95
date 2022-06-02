@@ -33,20 +33,20 @@ public class standardMazeCreator extends menu {
         ((TitledBorder) detailsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
         detailsPanel.add(new JLabel("Project Title: "));
         JTextField titleField = new JTextField(14);
-        titleField.setText("Awesome Maze"); // temporary dummy data
+        titleField.setText(mainWindow.project.title);
         detailsPanel.add(titleField);
         detailsPanel.add(new JLabel("Project Author: "));
         JTextField authorField = new JTextField(14);
-        authorField.setText("Bob Ross"); // temporary dummy data
+        authorField.setText(mainWindow.project.author);
         detailsPanel.add(authorField);
         detailsPanel.add(new JLabel("Creation Date: "));
         JTextField creationField = new JTextField(14);
-        creationField.setText("27-04-2022 11:27:03"); // temporary dummy data
+        creationField.setText(mainWindow.project.getCreationDate()); // temporary dummy data
         creationField.setEditable(false);
         detailsPanel.add(creationField);
         detailsPanel.add(new JLabel("Last Edited: "));
         JTextField editedField = new JTextField(14);
-        editedField.setText("27-04-2022 11:27:03"); // temporary dummy data
+        editedField.setText(mainWindow.project.getLastEdit()); // temporary dummy data
         editedField.setEditable(false);
         detailsPanel.add(editedField);
         pane1.add(detailsPanel);
@@ -106,6 +106,7 @@ public class standardMazeCreator extends menu {
         // 'browse' button functionality - browse for image
         browseButton.addActionListener(e-> {
             JFileChooser imgChooser = new JFileChooser();
+            imgChooser.setAcceptAllFileFilterUsed(false);
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Image (jpeg, jpg, png)", "jpeg", "jpg", "png");
             imgChooser.addChoosableFileFilter(filter);
             // Open selected image
@@ -120,12 +121,10 @@ public class standardMazeCreator extends menu {
             }
         });
 
-
         mazeCreatorFrame.pack();
         mazeCreatorFrame.setLocationRelativeTo(null);
         mazeCreatorFrame.setResizable(false);
         mazeCreatorFrame.setVisible(true);
 
     }
-
 }
