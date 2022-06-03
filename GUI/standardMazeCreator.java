@@ -1,13 +1,20 @@
 package GUI;
 
+import Maze.Drawing;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 public class standardMazeCreator extends menu {
 
+    private static Drawing drawPanel2;
+    
     public static void createStandardMaze(){
 
         JFrame mazeCreatorFrame = new JFrame("Maze Creator");
@@ -34,10 +41,12 @@ public class standardMazeCreator extends menu {
         detailsPanel.add(new JLabel("Project Title: "));
         JTextField titleField = new JTextField(14);
         titleField.setText(mainWindow.project.title);
+        titleField.setEditable(false);
         detailsPanel.add(titleField);
         detailsPanel.add(new JLabel("Project Author: "));
         JTextField authorField = new JTextField(14);
         authorField.setText(mainWindow.project.author);
+        authorField.setEditable(false);
         detailsPanel.add(authorField);
         detailsPanel.add(new JLabel("Creation Date: "));
         JTextField creationField = new JTextField(14);
@@ -51,7 +60,7 @@ public class standardMazeCreator extends menu {
         detailsPanel.add(editedField);
         pane1.add(detailsPanel);
         // Style contents
-        JPanel stylePanel = new JPanel(new GridLayout(1,1));
+        JPanel stylePanel = new JPanel(new GridLayout(2,3));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
         ((TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 16));
         JLabel imageText = new JLabel("  Logo Image:");
@@ -68,6 +77,15 @@ public class standardMazeCreator extends menu {
         browseButton.setFont(new Font("Serif", Font.PLAIN, 20));
         browseButtonPanel.add(browseButton);
         stylePanel.add(browseButtonPanel);
+        JPanel sizePanel = new JPanel();
+        sizePanel.setLayout(new GridBagLayout());
+        sizePanel.add(new JLabel("Set preferred maze size: "));
+        JTextField sizeInput = new JTextField();
+        sizeInput.setPreferredSize(new Dimension(80,20));
+        sizeInput.setMinimumSize(new Dimension(80,20));
+        sizeInput.grabFocus();
+        sizePanel.add(sizeInput);
+        stylePanel.add(sizePanel);
         pane1.add(stylePanel);
         //Metrics contents
         JPanel metricsPanel = new JPanel(new GridLayout(3,1));
@@ -84,16 +102,18 @@ public class standardMazeCreator extends menu {
         JButton generateButton = new JButton("Generate Maze");
         generateButton.setFont(new Font("Serif", Font.BOLD, 20));
         buttonPanel.add(generateButton);
+        JButton exportBtn = new JButton("Export");
+        exportBtn.setEnabled(false);
+        buttonPanel.add(exportBtn);
         generatePanel.setLayout(new GridBagLayout());
         generatePanel.add(buttonPanel);
         pane1.add(generatePanel);
 
 
         // Maze -- Right side of Split Pane -- Pane 2
-        JPanel pane2 = new JPanel();
-        JLabel temporaryLabel = new JLabel("Maze generates here.");
-        pane2.setLayout(new GridBagLayout());
-        pane2.add(temporaryLabel);
+        JScrollPane pane2 = new JScrollPane();
+        pane2.setAutoscrolls(true);
+        pane2.setPreferredSize(new Dimension(500, 500));
 
 
         // Creating Split Pane
@@ -102,6 +122,8 @@ public class standardMazeCreator extends menu {
         mazeSplitPane.setDividerLocation(400);
         mazeCreatorFrame.add(mazeSplitPane);
 
+
+        /* EVENT HANDLERS */
 
         // 'browse' button functionality - browse for image
         browseButton.addActionListener(e-> {
@@ -120,6 +142,47 @@ public class standardMazeCreator extends menu {
                 selectedImg.setText("No image selected");
             }
         });
+
+        // Generate button functionality
+       generateButton.addActionListener(ae -> {
+           Drawing drawPanel = new Drawing(sizeInput);
+           drawPanel.setBackground(Color.WHITE);
+           pane2.getViewport().add(drawPanel);
+           exportBtn.setEnabled(true);
+
+           drawPanel2 = drawPanel;
+       });
+
+        //AE
+        exportBtn.addActionListener(ae -> {
+
+            JFileChooser jfc = new JFileChooser();
+            jfc.setFileFilter(new FileNameExtensionFilter("Image (jpeg, jpg, png)", "jpeg", "jpg", "png"));
+
+            jfc.setDialogTitle("Save maze as image");
+            int saveResult = jfc.showSaveDialog(exportBtn);
+
+            BufferedImage componentImage = new BufferedImage(drawPanel2.getWidth(), drawPanel2.getHeight(), BufferedImage.TYPE_INT_RGB);
+            Graphics2D g2d = componentImage.createGraphics();
+            drawPanel2.paint(g2d);
+            File imageFile = jfc.getSelectedFile();
+            File imageFileJPG = new File(imageFile.toString()+".jpg");
+
+            try
+            {
+                if (saveResult == JFileChooser.APPROVE_OPTION)
+                {
+                    ImageIO.write(componentImage, "jpg", imageFileJPG);
+                }
+
+            }
+            catch (IOException ioe)
+            {
+                JOptionPane.showMessageDialog(jfc, "I/O Error!");
+            }
+
+                }
+        );
 
         mazeCreatorFrame.pack();
         mazeCreatorFrame.setLocationRelativeTo(null);
