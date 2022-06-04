@@ -1,6 +1,7 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class simpleMazeCreator extends menu {
@@ -15,15 +16,11 @@ public class simpleMazeCreator extends menu {
         mazeCreatorFrame.setJMenuBar(menu.createMenuBar());
 
 
-
         // Maze Editor and Details -- Left side of Split Pane -- Pane 1
         JPanel pane1 = new JPanel(new GridLayout(5, 1));
         // Title
-        JPanel titlePanel = new JPanel(new BorderLayout());
-        JLabel title = new JLabel("  Simple Maze Creator");
-        title.setFont(new Font ("Serif", Font.BOLD, 40));
-        titlePanel.add(title, BorderLayout.CENTER);
-        pane1.add(titlePanel);
+        JPanel titlePnl = titlePanel("Simple Maze Creator");
+        pane1.add(titlePnl);
         // Details contents
         JPanel detailsPanel = new JPanel(new GridLayout(4,2));
         detailsPanel.setBorder(BorderFactory.createTitledBorder("Details"));
@@ -50,7 +47,7 @@ public class simpleMazeCreator extends menu {
         // Style contents
         JPanel stylePanel = new JPanel(new GridLayout(2,2));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
-        ((javax.swing.border.TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
+        ((TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
         JLabel startImageText = new JLabel("Start image:");
         startImageText.setFont(new Font ("Serif", Font.PLAIN, 22));
         stylePanel.add(startImageText);
@@ -61,14 +58,8 @@ public class simpleMazeCreator extends menu {
         stylePanel.add(new JButton("Browse"));
         pane1.add(stylePanel);
         //Metrics contents
-        JPanel metricsPanel = new JPanel(new GridLayout(3,1));
-        metricsPanel.setBorder(BorderFactory.createTitledBorder("Metrics"));
-        ((javax.swing.border.TitledBorder) metricsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
-        metricsPanel.add(new JLabel("Percentage of cells that are reached by an optimal solution: 50%")); // temporary dummy data
-        metricsPanel.add(new JLabel("Percentage of cells that are dead ends: 12%")); // temporary dummy data
-        JCheckBox solutionCheckBox = new JCheckBox("Show Optimal Maze Solution");
-        metricsPanel.add(solutionCheckBox);
-        pane1.add(metricsPanel);
+        JPanel metricsPnl = metricsPanel();
+        pane1.add(metricsPnl);
         // Generate Button Panel
         JPanel generatePanel = new JPanel();
         JPanel buttonPanel = new JPanel();
@@ -78,7 +69,6 @@ public class simpleMazeCreator extends menu {
         generatePanel.setLayout(new GridBagLayout());
         generatePanel.add(buttonPanel);
         pane1.add(generatePanel);
-
 
 
         // Maze -- Right side of Split Pane -- Pane 2
@@ -99,7 +89,5 @@ public class simpleMazeCreator extends menu {
         mazeCreatorFrame.setLocationRelativeTo(null);
         mazeCreatorFrame.setResizable(false);
         mazeCreatorFrame.setVisible(true);
-
     }
-
 }

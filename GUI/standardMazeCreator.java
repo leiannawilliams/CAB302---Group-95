@@ -25,15 +25,11 @@ public class standardMazeCreator extends menu {
         mazeCreatorFrame.setJMenuBar(menu.createMenuBar());
 
 
-
         // Maze Editor and Details -- Left side of Split Pane -- Pane 1
         JPanel pane1 = new JPanel(new GridLayout(5, 1));
         // Title
-        JPanel titlePanel = new JPanel(new BorderLayout());
-        JLabel title = new JLabel("Standard Maze Creator");
-        title.setFont(new Font ("Serif", Font.BOLD, 38));
-        titlePanel.add(title, BorderLayout.CENTER);
-        pane1.add(titlePanel);
+        JPanel titlePnl = titlePanel("Standard Maze Creator");
+        pane1.add(titlePnl);
         // Details contents
         JPanel detailsPanel = new JPanel(new GridLayout(4,2));
         detailsPanel.setBorder(BorderFactory.createTitledBorder("Details"));
@@ -60,7 +56,7 @@ public class standardMazeCreator extends menu {
         detailsPanel.add(editedField);
         pane1.add(detailsPanel);
         // Style contents
-        JPanel stylePanel = new JPanel(new GridLayout(2,3));
+        JPanel stylePanel = new JPanel(new GridLayout(2,2));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
         ((TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 16));
         JLabel imageText = new JLabel("  Logo Image:");
@@ -88,14 +84,8 @@ public class standardMazeCreator extends menu {
         stylePanel.add(sizePanel);
         pane1.add(stylePanel);
         //Metrics contents
-        JPanel metricsPanel = new JPanel(new GridLayout(3,1));
-        metricsPanel.setBorder(BorderFactory.createTitledBorder("Metrics"));
-        ((TitledBorder) metricsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
-        metricsPanel.add(new JLabel("Percentage of cells that are reached by an optimal solution: 50%")); // temporary dummy data
-        metricsPanel.add(new JLabel("Percentage of cells that are dead ends: 12%")); // temporary dummy data
-        JCheckBox solutionCheckBox = new JCheckBox("Show Optimal Maze Solution");
-        metricsPanel.add(solutionCheckBox);
-        pane1.add(metricsPanel);
+        JPanel metricsPnl = metricsPanel();
+        pane1.add(metricsPnl);
         // Generate Button Panel
         JPanel generatePanel = new JPanel();
         JPanel buttonPanel = new JPanel();
@@ -153,7 +143,7 @@ public class standardMazeCreator extends menu {
            drawPanel2 = drawPanel;
        });
 
-        //AE
+        //Export button functionality
         exportBtn.addActionListener(ae -> {
 
             JFileChooser jfc = new JFileChooser();

@@ -1,6 +1,8 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 public abstract class menu extends JFrame{
 
@@ -36,5 +38,33 @@ public abstract class menu extends JFrame{
         helpMenu.add("Getting started with Maze Editor");
         menuBar.add(helpMenu);
         return menuBar;
+    }
+
+    /**
+     * Method to create title panel
+     * @param str title
+     * @return titlePnl
+     */
+    public static JPanel titlePanel(String str){
+        JPanel titlePnl = new JPanel(new BorderLayout());
+        JLabel title = new JLabel(str);
+        title.setFont(new Font("Serif", Font.BOLD, 38));
+        titlePnl.add(title, BorderLayout.CENTER);
+        return titlePnl;
+    }
+
+    /**
+     * Method to create metrics panel
+     * @return metricsPnl
+     */
+    public static JPanel metricsPanel(){
+        JPanel metricsPnl = new JPanel(new GridLayout(3,1));
+        metricsPnl.setBorder(BorderFactory.createTitledBorder("Metrics"));
+        ((TitledBorder) metricsPnl.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
+        metricsPnl.add(new JLabel("Percentage of cells that are reached by an optimal solution: 50%")); // temporary dummy data
+        metricsPnl.add(new JLabel("Percentage of cells that are dead ends: 12%")); // temporary dummy data
+        JCheckBox solutionCheckBox = new JCheckBox("Show Optimal Maze Solution");
+        metricsPnl.add(solutionCheckBox);
+        return metricsPnl;
     }
 }
