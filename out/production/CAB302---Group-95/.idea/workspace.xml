@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="">
+    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="progress so far">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/MazeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/MazeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,6 +54,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Maze" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -66,7 +70,7 @@
       </method>
     </configuration>
     <configuration name="Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Maze" />
+      <option name="MAIN_CLASS_NAME" value="Maze.Maze" />
       <module name="CAB302---Group-95" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,6 +84,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="" />
@@ -88,6 +95,77 @@
       <option name="presentableId" value="Default" />
       <updated>1649330865533</updated>
     </task>
+    <task id="LOCAL-00001" summary="Error handling: can no longer create a project without filling out text fields">
+      <created>1653239365651</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653239365652</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Error handling: can no longer create a project without filling out text fields">
+      <created>1653239513063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653239513070</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added a browse button functionality in standardMazeCreator class">
+      <created>1653283625684</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653283625685</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added 'Project' folder and can now add project name &amp; author">
+      <created>1654139593457</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654139593463</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Set cross-platform look &amp; feel">
+      <created>1654225526480</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654225526482</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Maze creator classes added to separate 'Maze' package">
+      <created>1654273259032</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654273259034</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added a 'Rename' option to file menu">
+      <created>1654274255181</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654274255199</updated>
+    </task>
+    <task id="LOCAL-00008" summary="In standardMazeCreator class, maze panel changed to scrollPane, can also generate maze">
+      <created>1654274778281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654274778282</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added methods to create title panel and metrics panel">
+      <created>1654318599597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654318599597</updated>
+    </task>
+    <task id="LOCAL-00010" summary="progress so far">
+      <created>1654411095508</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654411095510</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +181,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="classes for maze program" />
-    <option name="LAST_COMMIT_MESSAGE" value="classes for maze program" />
+    <MESSAGE value="Error handling: can no longer create a project without filling out text fields" />
+    <MESSAGE value="Added a browse button functionality in standardMazeCreator class" />
+    <MESSAGE value="Added 'Project' folder and can now add project name &amp; author" />
+    <MESSAGE value="Set cross-platform look &amp; feel" />
+    <MESSAGE value="Maze creator classes added to separate 'Maze' package" />
+    <MESSAGE value="Added a 'Rename' option to file menu" />
+    <MESSAGE value="In standardMazeCreator class, maze panel changed to scrollPane, can also generate maze" />
+    <MESSAGE value="Added methods to create title panel and metrics panel" />
+    <MESSAGE value="progress so far" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress so far" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar:///Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Canvas.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CAB302___Group_95$Main.ic" NAME="Main Coverage Results" MODIFIED="1653547854618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Added methods to create title panel and metrics panel">
+    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="progress so far">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/standardMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/standardMazeCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" afterDir="false" />
@@ -164,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654318599597</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="progress so far">
+      <created>1654411095508</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654411095510</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +195,8 @@
     <MESSAGE value="Added a 'Rename' option to file menu" />
     <MESSAGE value="In standardMazeCreator class, maze panel changed to scrollPane, can also generate maze" />
     <MESSAGE value="Added methods to create title panel and metrics panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added methods to create title panel and metrics panel" />
+    <MESSAGE value="progress so far" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress so far" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

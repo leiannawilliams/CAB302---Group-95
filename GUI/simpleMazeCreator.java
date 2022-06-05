@@ -22,27 +22,8 @@ public class simpleMazeCreator extends menu {
         JPanel titlePnl = titlePanel("Simple Maze Creator");
         pane1.add(titlePnl);
         // Details contents
-        JPanel detailsPanel = new JPanel(new GridLayout(4,2));
-        detailsPanel.setBorder(BorderFactory.createTitledBorder("Details"));
-        ((javax.swing.border.TitledBorder) detailsPanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
-        detailsPanel.add(new JLabel("Project Title: "));
-        JTextField titleField = new JTextField(14);
-        titleField.setText("Doggy Maze"); // temporary dummy data
-        detailsPanel.add(titleField);
-        detailsPanel.add(new JLabel("Project Author: "));
-        JTextField authorField = new JTextField(14);
-        authorField.setText("Bob Ross"); // temporary dummy data
-        detailsPanel.add(authorField);
-        detailsPanel.add(new JLabel("Creation Date: "));
-        JTextField creationField = new JTextField(14);
-        creationField.setText("27-04-2022 11:27:03"); // temporary dummy data
-        creationField.setEditable(false);
-        detailsPanel.add(creationField);
-        detailsPanel.add(new JLabel("Last Edited: "));
-        JTextField editedField = new JTextField(14);
-        editedField.setText("27-04-2022 11:27:03"); // temporary dummy data
-        editedField.setEditable(false);
-        detailsPanel.add(editedField);
+        JPanel detailsPanel = detailsPanel();
+        pane1.add(detailsPanel);
         pane1.add(detailsPanel);
         // Style contents
         JPanel stylePanel = new JPanel(new GridLayout(2,2));

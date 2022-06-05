@@ -60,6 +60,27 @@ public abstract class menu extends JFrame{
     public static JPanel detailsPanel(){
         JPanel detailsPnl = new JPanel(new GridLayout(4,2));
         detailsPnl.setBorder(BorderFactory.createTitledBorder("Details"));
+        ((TitledBorder) detailsPnl.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
+        detailsPnl.add(new JLabel("Project Title: "));
+        JTextField titleField = new JTextField(14);
+        titleField.setText(mainWindow.project.title);
+        titleField.setEditable(false);
+        detailsPnl.add(titleField);
+        detailsPnl.add(new JLabel("Project Author: "));
+        JTextField authorField = new JTextField(14);
+        authorField.setText(mainWindow.project.author);
+        authorField.setEditable(false);
+        detailsPnl.add(authorField);
+        detailsPnl.add(new JLabel("Creation Date: "));
+        JTextField creationField = new JTextField(14);
+        creationField.setText(mainWindow.project.getCreationDate()); // temporary dummy data
+        creationField.setEditable(false);
+        detailsPnl.add(creationField);
+        detailsPnl.add(new JLabel("Last Edited: "));
+        JTextField editedField = new JTextField(14);
+        editedField.setText(mainWindow.project.getLastEdit()); // temporary dummy data
+        editedField.setEditable(false);
+        detailsPnl.add(editedField);
         return detailsPnl;
     }
 
