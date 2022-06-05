@@ -1,6 +1,7 @@
 package Project;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Project {
     public String title;
@@ -52,11 +53,13 @@ public class Project {
 
     public String getCreationDate(){
         LocalDateTime created = LocalDateTime.now();
-        return String.valueOf(created);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        return created.format(dtf);
     }
 
     public String getLastEdit(){
         LocalDateTime lastEdited = LocalDateTime.now();
-        return String.valueOf(lastEdited);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        return lastEdited.format(dtf);
     }
 }
