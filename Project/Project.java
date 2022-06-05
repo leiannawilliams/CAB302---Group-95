@@ -5,8 +5,6 @@ import java.time.LocalDateTime;
 public class Project {
     public String title;
     public String author;
-    private LocalDateTime created;
-    private LocalDateTime lastEdited;
 
     /**
      * Class constructor to create a new project
@@ -53,12 +51,12 @@ public class Project {
     }
 
     public String getCreationDate(){
-        this.created = java.time.LocalDateTime.now();
+        LocalDateTime created = LocalDateTime.now();
         return String.valueOf(created);
     }
 
     public String getLastEdit(){
-        this.lastEdited = java.time.LocalDateTime.now();
+        LocalDateTime lastEdited = LocalDateTime.now();
         return String.valueOf(lastEdited);
     }
 }

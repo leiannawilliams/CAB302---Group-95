@@ -54,6 +54,16 @@ public abstract class menu extends JFrame{
     }
 
     /**
+     * Method to create the details panel
+     * @return detailsPnl
+     */
+    public static JPanel detailsPanel(){
+        JPanel detailsPnl = new JPanel(new GridLayout(4,2));
+        detailsPnl.setBorder(BorderFactory.createTitledBorder("Details"));
+        return detailsPnl;
+    }
+
+    /**
      * Method to create metrics panel
      * @return metricsPnl
      */
