@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="create details panel changed to method in menu class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/standardMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/standardMazeCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -7,12 +7,14 @@ import java.awt.*;
 
 public class mainWindow extends menu {
 
+    public static JFrame mainWindowFrame;
+
     static String projectTitle = null;
     static String projectAuthor = null;
     public static Project project = new Project(projectTitle, projectAuthor);
 
     public void createMainWindow(Project project) {
-        JFrame mainWindowFrame = new JFrame("Maze Creator");
+        mainWindowFrame = new JFrame("Maze Creator");
         mainWindowFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindowFrame.setPreferredSize(new Dimension(600, 500));
 

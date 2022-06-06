@@ -1,5 +1,4 @@
 import GUI.mainWindow;
-
 import javax.swing.*;
 
 public class Main{

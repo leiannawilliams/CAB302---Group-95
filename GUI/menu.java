@@ -3,9 +3,9 @@ package GUI;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import static GUI.mainWindow.*;
 
 public abstract class menu extends JFrame{
-
 
     public static JMenuBar createMenuBar(){
         // CREATE MENU BAR
@@ -14,6 +14,8 @@ public abstract class menu extends JFrame{
         // FILE MENU
         JMenu fileMenu = new JMenu("File");
         JMenuItem mainMenu = fileMenu.add("Main Menu");
+        // Action Listener to open main window frame
+        mainMenu.addActionListener( e -> mainWindowFrame.setVisible(true));
         JMenuItem newProject = fileMenu.add("New Project");
         JMenuItem viewProjects = fileMenu.add("View Projects");
         // Action Listener to view list of maze projects (this will direct the user to the maze list window)
@@ -42,7 +44,7 @@ public abstract class menu extends JFrame{
 
     /**
      * Method to create title panel
-     * @param str title
+     * @param str type of maze creator - standard or simple
      * @return titlePnl
      */
     public static JPanel titlePanel(String str){
@@ -63,22 +65,22 @@ public abstract class menu extends JFrame{
         ((TitledBorder) detailsPnl.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
         detailsPnl.add(new JLabel("Project Title: "));
         JTextField titleField = new JTextField(14);
-        titleField.setText(mainWindow.project.title);
+        titleField.setText(project.title);
         titleField.setEditable(false);
         detailsPnl.add(titleField);
         detailsPnl.add(new JLabel("Project Author: "));
         JTextField authorField = new JTextField(14);
-        authorField.setText(mainWindow.project.author);
+        authorField.setText(project.author);
         authorField.setEditable(false);
         detailsPnl.add(authorField);
         detailsPnl.add(new JLabel("Creation Date: "));
         JTextField creationField = new JTextField(14);
-        creationField.setText(mainWindow.project.getCreationDate()); // temporary dummy data
+        creationField.setText(project.getCreationDate()); // temporary dummy data
         creationField.setEditable(false);
         detailsPnl.add(creationField);
         detailsPnl.add(new JLabel("Last Edited: "));
         JTextField editedField = new JTextField(14);
-        editedField.setText(mainWindow.project.getLastEdit()); // temporary dummy data
+        editedField.setText(project.getLastEdit()); // temporary dummy data
         editedField.setEditable(false);
         detailsPnl.add(editedField);
         return detailsPnl;
