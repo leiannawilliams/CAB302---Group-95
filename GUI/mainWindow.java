@@ -79,7 +79,7 @@ public class mainWindow extends menu {
             projectAuthor = project.setAuthor(authorField.getText());
             if (result == JOptionPane.OK_OPTION) {
                  if(titleField.getText().isBlank() || authorField.getText().isBlank()){
-                    JOptionPane.showMessageDialog(null, "Error: PLease fill out fields before proceeding.");
+                    JOptionPane.showMessageDialog(null, "Error: Please fill out fields before proceeding.");
                 }
                 else if(standardMazeBtn.isSelected()){
                     mainWindowFrame.setVisible(false);
@@ -90,7 +90,7 @@ public class mainWindow extends menu {
                     simpleMazeCreator.createSimpleMaze();
                 }
                 else if(!simpleMazeBtn.isSelected() && !standardMazeBtn.isSelected()){
-                    JOptionPane.showMessageDialog(null, "Error: Please choose a maze difficulty.");
+                    JOptionPane.showMessageDialog(null, "Error: Please select a maze difficulty.");
                 }
             }
         });
