@@ -23,6 +23,7 @@ public abstract class menu extends JFrame{
         // Action Listener to view list of maze projects (this will direct the user to the maze list window)
         viewProjects.addActionListener(e -> mazeList.createMazeList());
         JMenuItem save = fileMenu.add("Save");
+        // Catches SQLException to save the current project to the mazeList table of the database
         save.addActionListener(e -> {
             try {
                 Project.Project.save();

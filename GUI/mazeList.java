@@ -3,10 +3,13 @@ package GUI;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.sql.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class mazeList extends menu {
 
-    public static void createMazeList(){
+    public static void createMazeList() {
 
         JFrame mazeListFrame = new JFrame("Maze Creator");
         mazeListFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -23,7 +26,7 @@ public class mazeList extends menu {
         JLabel title = new JLabel(" List of Mazes");
         title.setFont(new Font ("Serif", Font.BOLD, 40));
         titlePanel.add(title);
-        String[] sortBy = {"Title", "Author", "Date Created", "Date Last Edited"};
+        String[] sortBy = {"","Title", "Author", "Date Created", "Date Last Edited"};
 
         JPanel comboPanel = new JPanel();
         JLabel sortByLabel = new JLabel("Sort by:");
@@ -37,6 +40,36 @@ public class mazeList extends menu {
 
         // Creating a table with the list of all existing mazes
         JPanel mazeList = new JPanel();
+
+        // Boolean so that the function (dbRowCount) to count the number of rows in mazeList only runs once.
+        AtomicBoolean rowCounted = new AtomicBoolean(false);
+        AtomicInteger rowCount = new AtomicInteger();
+
+        // Functionality of JComboBox
+        mazeComboBox.addActionListener(e -> {
+            Object item = mazeComboBox.getSelectedItem();
+
+            if(rowCounted.get() == false){
+                rowCounted.set(true);
+                try {
+                    rowCount.set(dbRowCount());
+                } catch (SQLException ex) {
+                    return;
+                }
+            }
+            if(item == "Title"){
+                //
+            }
+            else if(item == "Author"){
+                //
+            }
+            else if(item == "Date Created"){
+                //
+            }
+            else if(item == "Date Last Edited"){
+                //
+            }
+        });
 
         // Temporary dummy table Data
         String[] columns = {"Title", "Author", "Date Created", "Date Edited", "Export?"};
@@ -76,6 +109,18 @@ public class mazeList extends menu {
         mazeListFrame.setLocationRelativeTo(null);
         mazeListFrame.setResizable(false);
         mazeListFrame.setVisible(true);
+    }
+
+    public static int dbRowCount() throws SQLException {
+        // Counting the number of rows in the database.
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select count(*) from mazeList;");
+        rs.next();
+        int count = rs.getInt(1);
+        statement.close();
+        connection.close();
+        return count;
     }
 
 }

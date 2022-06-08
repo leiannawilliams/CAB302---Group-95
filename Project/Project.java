@@ -72,6 +72,9 @@ public class Project {
         return lastEdited.format(dtf);
     }
 
+
+    /* DATABASE METHODS */
+
     public static int updateDatabase(String title, String author, String dateCreated, String dateEdited) throws SQLException {
         // Adding project information to database -- title, author, date edited, date created.
         Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
@@ -82,6 +85,11 @@ public class Project {
         return project;
     }
 
+    public static int save() throws SQLException {
+        updateDatabase(project.getTitle(), project.getAuthor(), project.setCreationDate(), project.setLastEdit());
+        return 0;
+    }
+
 
     /* OTHER METHODS */
 
@@ -89,10 +97,6 @@ public class Project {
 
     }
 
-    public static int save() throws SQLException {
-        updateDatabase(project.getTitle(), project.getAuthor(), project.setCreationDate(), project.setLastEdit());
-        return 0;
-    }
 
     private void edit(){
 
