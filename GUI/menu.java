@@ -3,6 +3,8 @@ package GUI;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.sql.SQLException;
+
 import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
 
@@ -17,11 +19,17 @@ public abstract class menu extends JFrame{
         JMenuItem mainMenu = fileMenu.add("Main Menu");
         // Action Listener to open main window frame
         mainMenu.addActionListener( e -> mainWindowFrame.setVisible(true));
-        JMenuItem newProject = fileMenu.add("New Project");
         JMenuItem viewProjects = fileMenu.add("View Projects");
         // Action Listener to view list of maze projects (this will direct the user to the maze list window)
         viewProjects.addActionListener(e -> mazeList.createMazeList());
         JMenuItem save = fileMenu.add("Save");
+        save.addActionListener(e -> {
+            try {
+                Project.Project.save();
+            } catch (SQLException ex) {
+                return;
+            }
+        });
         JMenuItem export = fileMenu.add("Export");
         menuBar.add(fileMenu);
 
@@ -76,12 +84,12 @@ public abstract class menu extends JFrame{
         detailsPnl.add(authorField);
         detailsPnl.add(new JLabel("Creation Date: "));
         JTextField creationField = new JTextField(14);
-        creationField.setText(project.setCreationDate()); // temporary dummy data
+        creationField.setText(project.setCreationDate());
         creationField.setEditable(false);
         detailsPnl.add(creationField);
         detailsPnl.add(new JLabel("Last Edited: "));
         JTextField editedField = new JTextField(14);
-        editedField.setText(project.setLastEdit()); // temporary dummy data
+        editedField.setText(project.setLastEdit());
         editedField.setEditable(false);
         detailsPnl.add(editedField);
         return detailsPnl;

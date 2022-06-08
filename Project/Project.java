@@ -1,7 +1,13 @@
 package Project;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import static GUI.mainWindow.project;
 
 public class Project {
     /**
@@ -11,6 +17,7 @@ public class Project {
      * <b>created</b> will use DateTimeFormatter to store the creation date and time of a maze.
      * <b>lastEdited</b> will use DateTimeFormatter to store the date and time of the last edit of a maze.
      */
+
     private String title;
     private String author;
 
@@ -65,6 +72,16 @@ public class Project {
         return lastEdited.format(dtf);
     }
 
+    public static int updateDatabase(String title, String author, String dateCreated, String dateEdited) throws SQLException {
+        // Adding project information to database -- title, author, date edited, date created.
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
+        Statement statement = connection.createStatement();
+        int project = statement.executeUpdate("INSERT INTO mazeList VALUES ('" + title + "', '" + author + "', '" + dateCreated + "', '" + dateEdited + "');");
+        statement.close();
+        connection.close();
+        return project;
+    }
+
 
     /* OTHER METHODS */
 
@@ -72,8 +89,9 @@ public class Project {
 
     }
 
-    private void save(){
-
+    public static int save() throws SQLException {
+        updateDatabase(project.getTitle(), project.getAuthor(), project.setCreationDate(), project.setLastEdit());
+        return 0;
     }
 
     private void edit(){

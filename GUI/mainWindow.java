@@ -1,9 +1,11 @@
 package GUI;
 
-import Project.*;
+import Project.Project;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class mainWindow extends menu {
 
@@ -11,7 +13,7 @@ public class mainWindow extends menu {
 
     public static Project project = new Project();
 
-    public void createMainWindow(Project project) {
+    public void createMainWindow(Project project) throws SQLException {
         mainWindowFrame = new JFrame("Maze Creator");
         mainWindowFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindowFrame.setPreferredSize(new Dimension(600, 500));
@@ -84,6 +86,7 @@ public class mainWindow extends menu {
                 else if(standardMazeBtn.isSelected()){
                     mainWindowFrame.setVisible(false);
                     standardMazeCreator.createStandardMaze();
+
                 }
                 else if(simpleMazeBtn.isSelected()){
                     mainWindowFrame.setVisible(false);
