@@ -3,7 +3,8 @@ package GUI;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import static GUI.mainWindow.*;
+import static GUI.mainWindow.mainWindowFrame;
+import static GUI.mainWindow.project;
 
 public abstract class menu extends JFrame{
 
@@ -65,22 +66,22 @@ public abstract class menu extends JFrame{
         ((TitledBorder) detailsPnl.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
         detailsPnl.add(new JLabel("Project Title: "));
         JTextField titleField = new JTextField(14);
-        titleField.setText(project.title);
+        titleField.setText(project.getTitle());
         titleField.setEditable(false);
         detailsPnl.add(titleField);
         detailsPnl.add(new JLabel("Project Author: "));
         JTextField authorField = new JTextField(14);
-        authorField.setText(project.author);
+        authorField.setText(project.getAuthor());
         authorField.setEditable(false);
         detailsPnl.add(authorField);
         detailsPnl.add(new JLabel("Creation Date: "));
         JTextField creationField = new JTextField(14);
-        creationField.setText(project.getCreationDate()); // temporary dummy data
+        creationField.setText(project.setCreationDate()); // temporary dummy data
         creationField.setEditable(false);
         detailsPnl.add(creationField);
         detailsPnl.add(new JLabel("Last Edited: "));
         JTextField editedField = new JTextField(14);
-        editedField.setText(project.getLastEdit()); // temporary dummy data
+        editedField.setText(project.setLastEdit()); // temporary dummy data
         editedField.setEditable(false);
         detailsPnl.add(editedField);
         return detailsPnl;

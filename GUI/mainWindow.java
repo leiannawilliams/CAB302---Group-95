@@ -9,9 +9,7 @@ public class mainWindow extends menu {
 
     public static JFrame mainWindowFrame;
 
-    static String projectTitle = null;
-    static String projectAuthor = null;
-    public static Project project = new Project(projectTitle, projectAuthor);
+    public static Project project = new Project();
 
     public void createMainWindow(Project project) {
         mainWindowFrame = new JFrame("Maze Creator");
@@ -75,8 +73,10 @@ public class mainWindow extends menu {
         newProjectBtn.addActionListener(e -> {
             int result = JOptionPane.showConfirmDialog(null, popupPanel,
                     "Create New Project", JOptionPane.OK_CANCEL_OPTION);
-            projectTitle = project.setTitle(titleField.getText());
-            projectAuthor = project.setAuthor(authorField.getText());
+            // projectTitle = project.setTitle(titleField.getText());
+            // projectAuthor = project.setAuthor(authorField.getText());
+            project.setTitle(titleField.getText());
+            project.setAuthor(authorField.getText());
             if (result == JOptionPane.OK_OPTION) {
                  if(titleField.getText().isBlank() || authorField.getText().isBlank()){
                     JOptionPane.showMessageDialog(null, "Error: Please fill out fields before proceeding.");
