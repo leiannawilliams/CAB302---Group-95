@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -11,6 +12,13 @@ public class mazeList extends menu {
     /**
      * Method to create the maze list GUI
      */
+
+    // Arrays to store data from database
+    static ArrayList<String> titleData = new ArrayList<String>();
+    static ArrayList<String> authorData = new ArrayList<String>();
+    static ArrayList<String> dateCreatedData = new ArrayList<String>();
+    static ArrayList<String> dateEditedData = new ArrayList<String>();
+
     public static void createMazeList() {
 
         JFrame mazeListFrame = new JFrame("Maze Creator");
@@ -59,10 +67,15 @@ public class mazeList extends menu {
                 }
             }
             if(item == "Title"){
-                //
+                try {
+                    dbTableData();
+
+                } catch (SQLException ex) {
+                    return;
+                }
             }
             else if(item == "Author"){
-                //
+
             }
             else if(item == "Date Created"){
                 //
@@ -117,7 +130,7 @@ public class mazeList extends menu {
      * @return count - the number of rows
      * @throws SQLException
      */
-    public static int dbRowCount() throws SQLException {
+    public static int dbRowCount() throws SQLException { /// Deprecated function
         // Counting the number of rows in the database.
         Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
         Statement statement = connection.createStatement();
@@ -127,6 +140,50 @@ public class mazeList extends menu {
         statement.close();
         connection.close();
         return count;
+    }
+
+    /**
+     * Stores data from 'mazeList' database table into arrays
+     * @throws SQLException
+     */
+    public static int dbTableData() throws SQLException{
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
+        Statement statement = connection.createStatement();
+
+        // Storing title data
+        ResultSet rs1 = statement.executeQuery( "SELECT title FROM mazeList;" );
+        int columnCount = rs1.getMetaData().getColumnCount();
+        rs1.next();
+        for (int i = 0; i <columnCount ; i++)
+        {
+            titleData.add(rs1.getString(i + 1) );
+        }
+
+        // Storing author data
+        ResultSet rs2 = statement.executeQuery( "SELECT author FROM mazeList;" );
+        rs2.next();
+        for (int i = 0; i <columnCount ; i++)
+        {
+            authorData.add(rs2.getString(i + 1) );
+        }
+
+        // Storing dateCreated data
+        ResultSet rs3 = statement.executeQuery( "SELECT dateCreated FROM mazeList;" );
+        rs3.next();
+        for (int i = 0; i <columnCount ; i++)
+        {
+            dateCreatedData.add(rs3.getString(i + 1) );
+        }
+
+        // Storing dateEdited data
+        ResultSet rs4 = statement.executeQuery( "SELECT dateEdited FROM mazeList;" );
+        rs4.next();
+        for (int i = 0; i <columnCount ; i++)
+        {
+            dateEditedData.add(rs4.getString(i + 1) );
+        }
+
+        return 0;
     }
 
 }

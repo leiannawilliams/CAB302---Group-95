@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="create details panel changed to method in menu class">
+    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Removed menuBar from main window">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/mazeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mazeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project/Project.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +46,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "settings.editor.selected.configurable": "inlay.hints"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Maze" />
@@ -171,7 +162,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654416670989</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Javadoc &amp; commenting in GUI package">
+      <created>1654753989851</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654753989851</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Removed menuBar from main window">
+      <created>1654758582895</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654758582895</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +202,9 @@
     <MESSAGE value="Added methods to create title panel and metrics panel" />
     <MESSAGE value="progress so far" />
     <MESSAGE value="create details panel changed to method in menu class" />
-    <option name="LAST_COMMIT_MESSAGE" value="create details panel changed to method in menu class" />
+    <MESSAGE value="Javadoc &amp; commenting in GUI package" />
+    <MESSAGE value="Removed menuBar from main window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed menuBar from main window" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -209,6 +216,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CAB302___Group_95$Main.ic" NAME="Main Coverage Results" MODIFIED="1653547854618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
