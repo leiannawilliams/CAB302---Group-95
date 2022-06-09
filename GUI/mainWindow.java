@@ -22,9 +22,6 @@ public class mainWindow extends menu {
         mainWindowFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindowFrame.setPreferredSize(new Dimension(600, 500));
 
-        // Adding menu bar to frame
-        mainWindowFrame.setJMenuBar(menu.createMenuBar());
-
         // Creating main window label and buttons
         JLabel title = new JLabel("Maze Editor");
         title.setFont(new Font ("Serif", Font.BOLD, 60));
