@@ -57,12 +57,6 @@ public class mazeList extends menu {
 
 
         DefaultTableModel mazeTableModel = new DefaultTableModel(columns, 0);
-        mazeTableModel.addRow(new Object[]{"yes", "yes", "yes", "yes", false});
-
-        for (int i = 0; i < titleData.size(); i++)
-        {
-            mazeTableModel.addRow( new Object[]{ 1+i, titleData.get(i), authorData.get(i), dateCreatedData.get(i), dateEditedData.get(i), false} );
-        }
 
         JTable mazeJTable = new JTable(mazeTableModel) {
             public Class<?> getColumnClass(int column) {
@@ -76,33 +70,57 @@ public class mazeList extends menu {
         mazeList.add(sp);
         mainPanel.add(mazeList);
 
-        // Functionality of JComboBox
+        // Functionality of 'sort by' JComboBox and implementation of JTable rows
         mazeComboBox.addActionListener(e -> {
             Object item = mazeComboBox.getSelectedItem();
+            // Sort by Title
             if(item == "Title"){
                 try {
+                    mazeTableModel.setRowCount(0);
                     dbTableData("title");
+                    for (int i = 0; i < titleData.size(); i++)
+                    {
+                        mazeTableModel.addRow( new Object[]{titleData.get(i), authorData.get(i), dateCreatedData.get(i), dateEditedData.get(i), false} );
+                    }
                 } catch (SQLException ex) {
                     return;
                 }
             }
+            // Sort by Author
             else if(item == "Author"){
                 try {
+                    mazeTableModel.setRowCount(0);
                     dbTableData("author");
+                    for (int i = 0; i < titleData.size(); i++)
+                    {
+                        mazeTableModel.addRow( new Object[]{titleData.get(i), authorData.get(i), dateCreatedData.get(i), dateEditedData.get(i), false} );
+                    }
                 } catch (SQLException ex) {
                     return;
                 }
             }
+            // Sort by Date Created
             else if(item == "Date Created"){
                 try {
+                    mazeTableModel.setRowCount(0);
                     dbTableData("dateCreated");
+                    for (int i = 0; i < titleData.size(); i++)
+                    {
+                        mazeTableModel.addRow( new Object[]{titleData.get(i), authorData.get(i), dateCreatedData.get(i), dateEditedData.get(i), false} );
+                    }
                 } catch (SQLException ex) {
                     return;
                 }
             }
+            // Sort by Date Edited
             else if(item == "Date Last Edited"){
                 try {
+                    mazeTableModel.setRowCount(0);
                     dbTableData("dateEdited");
+                    for (int i = 0; i < titleData.size(); i++)
+                    {
+                        mazeTableModel.addRow( new Object[]{titleData.get(i), authorData.get(i), dateCreatedData.get(i), dateEditedData.get(i), false} );
+                    }
                 } catch (SQLException ex) {
                     return;
                 }
@@ -136,28 +154,28 @@ public class mazeList extends menu {
         Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
         Statement statement = connection.createStatement();
 
-        // Storing title data
+        // Storing title data in ListArray
         ResultSet rs1 = statement.executeQuery( "SELECT title FROM mazeList ORDER BY " + order + ";" );
         titleData.removeAll(titleData);
         while (rs1.next()) {
             titleData.add(rs1.getString(1));
         }
 
-        // Storing author data
+        // Storing author data in ListArray
         ResultSet rs2 = statement.executeQuery( "SELECT author FROM mazeList ORDER BY " + order + ";" );
         authorData.removeAll(authorData);
         while (rs2.next()) {
             authorData.add(rs2.getString(1));
         }
 
-        // Storing dateCreated data
+        // Storing dateCreated data in ListArray
         ResultSet rs3 = statement.executeQuery( "SELECT dateCreated FROM mazeList ORDER BY " + order + ";" );
         dateCreatedData.removeAll(dateCreatedData);
         while (rs3.next()) {
             dateCreatedData.add(rs3.getString(1));
         }
 
-        // Storing dateEdited data
+        // Storing dateEdited data in ListArray
         ResultSet rs4 = statement.executeQuery( "SELECT dateEdited FROM mazeList ORDER BY " + order + ";" );
         dateEditedData.removeAll(dateEditedData);
         while (rs4.next()) {
