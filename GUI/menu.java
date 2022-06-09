@@ -1,17 +1,19 @@
 package GUI;
 
+import Maze.Drawing;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.sql.SQLException;
-
 import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
+import static GUI.standardMazeCreator.drawPanel2;
+import static GUI.standardMazeCreator.pane2;
 
 public abstract class menu extends JFrame{
     /**
-     *Method to create the file menu bar
-     *@return menuBar
+     * Method to create the file menu bar
+     * @return menuBar
      */
     public static JMenuBar createMenuBar(){
         // CREATE MENU BAR
@@ -113,5 +115,45 @@ public abstract class menu extends JFrame{
         JCheckBox solutionCheckBox = new JCheckBox("Show Optimal Maze Solution");
         metricsPnl.add(solutionCheckBox);
         return metricsPnl;
+    }
+
+    /**
+     * Method to create generate panel in standard maze creator
+     * @param sizeInput size of maze determined by user input
+     * @return generatePnl
+     */
+    public static JPanel generatePanel(JTextField sizeInput){
+        JPanel generatePnl = new JPanel();
+        JPanel buttonPanel = new JPanel();
+        JButton generateButton = new JButton("Generate Maze");
+        generateButton.setFont(new Font("Serif", Font.BOLD, 20));
+        buttonPanel.add(generateButton);
+        generatePnl.setLayout(new GridBagLayout());
+        generatePnl.add(buttonPanel);
+
+        // Generate button functionality
+        generateButton.addActionListener(ae -> {
+            Drawing drawPanel = new Drawing(sizeInput);
+            drawPanel.setBackground(Color.WHITE);
+            pane2.getViewport().add(drawPanel);
+
+            drawPanel2 = drawPanel;
+        });
+        return generatePnl;
+    }
+
+    /**
+     * Method to create generate panel in simple maze creator
+     * @return generatePnl
+     */
+    public static JPanel generatePanel(){
+        JPanel generatePnl = new JPanel();
+        JPanel buttonPanel = new JPanel();
+        JButton generateButton = new JButton("Generate Maze");
+        generateButton.setFont(new Font("Serif", Font.BOLD, 20));
+        buttonPanel.add(generateButton);
+        generatePnl.setLayout(new GridBagLayout());
+        generatePnl.add(buttonPanel);
+        return generatePnl;
     }
 }

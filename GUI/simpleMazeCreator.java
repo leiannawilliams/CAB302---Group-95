@@ -26,7 +26,6 @@ public class simpleMazeCreator extends menu {
         // Details contents
         JPanel detailsPanel = detailsPanel();
         pane1.add(detailsPanel);
-        pane1.add(detailsPanel);
         // Style contents
         JPanel stylePanel = new JPanel(new GridLayout(2,2));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
@@ -44,21 +43,14 @@ public class simpleMazeCreator extends menu {
         JPanel metricsPnl = metricsPanel();
         pane1.add(metricsPnl);
         // Generate Button Panel
-        JPanel generatePanel = new JPanel();
-        JPanel buttonPanel = new JPanel();
-        JButton generateButton = new JButton("Generate Maze");
-        generateButton.setFont(new Font("Serif", Font.BOLD, 20));
-        buttonPanel.add(generateButton);
-        generatePanel.setLayout(new GridBagLayout());
-        generatePanel.add(buttonPanel);
+        JPanel generatePanel = generatePanel();
         pane1.add(generatePanel);
 
 
         // Maze -- Right side of Split Pane -- Pane 2
-        JPanel pane2 = new JPanel();
-        JLabel temporaryLabel = new JLabel("Maze generates here.");
-        pane2.setLayout(new GridBagLayout());
-        pane2.add(temporaryLabel);
+        JScrollPane pane2 = new JScrollPane();
+        pane2.setAutoscrolls(true);
+        pane2.setPreferredSize(new Dimension(500, 500));
 
 
         // Creating Split Pane
