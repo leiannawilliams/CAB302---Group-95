@@ -1,9 +1,14 @@
 package GUI;
 
 import Maze.Drawing;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
@@ -37,6 +42,39 @@ public abstract class menu extends JFrame{
             }
         });
         JMenuItem export = fileMenu.add("Export");
+        // Action listener to export maze as image file
+        export.addActionListener(e -> {
+            if (drawPanel2 != null){
+                JFileChooser jfc = new JFileChooser();
+                jfc.setFileFilter(new FileNameExtensionFilter("Image (jpeg, jpg, png)", "jpeg", "jpg", "png"));
+
+                jfc.setDialogTitle("Save maze as image");
+                int saveResult = jfc.showSaveDialog(export);
+
+                BufferedImage componentImage = new BufferedImage(drawPanel2.getWidth(), drawPanel2.getHeight(), BufferedImage.TYPE_INT_RGB);
+                Graphics2D g2d = componentImage.createGraphics();
+                drawPanel2.paint(g2d);
+
+                File imageFile = jfc.getSelectedFile();
+                File imageFileJPG = new File(imageFile.toString()+".jpg");
+
+                try
+                {
+                    if (saveResult == JFileChooser.APPROVE_OPTION)
+                    {
+                        ImageIO.write(componentImage, "jpg", imageFileJPG);
+                    }
+
+                }
+                catch (IOException ioe)
+                {
+                    JOptionPane.showMessageDialog(jfc, "I/O Error!");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "No mazes to export!");
+            }
+        });
         menuBar.add(fileMenu);
 
         // EDIT MENU
