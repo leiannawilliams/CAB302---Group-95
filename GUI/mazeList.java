@@ -5,15 +5,13 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class mazeList extends menu {
     /**
      * Method to create the maze list GUI
      */
 
-    // Arrays to store data from database
+    // Arraylists to store data from database
     static ArrayList<String> titleData = new ArrayList<String>();
     static ArrayList<String> authorData = new ArrayList<String>();
     static ArrayList<String> dateCreatedData = new ArrayList<String>();
@@ -22,7 +20,7 @@ public class mazeList extends menu {
     public static void createMazeList() {
 
         JFrame mazeListFrame = new JFrame("Maze Creator");
-        mazeListFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        mazeListFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mazeListFrame.setPreferredSize(new Dimension(600, 500));
 
         // Adding menu bar to frame
@@ -50,41 +48,6 @@ public class mazeList extends menu {
         // Creating a table with the list of all existing mazes
         JPanel mazeList = new JPanel();
 
-        // Boolean so that the function (dbRowCount) to count the number of rows in mazeList only runs once.
-        AtomicBoolean rowCounted = new AtomicBoolean(false);
-        AtomicInteger rowCount = new AtomicInteger();
-
-        // Functionality of JComboBox
-        mazeComboBox.addActionListener(e -> {
-            Object item = mazeComboBox.getSelectedItem();
-
-            if(rowCounted.get() == false){
-                rowCounted.set(true);
-                try {
-                    rowCount.set(dbRowCount());
-                } catch (SQLException ex) {
-                    return;
-                }
-            }
-            if(item == "Title"){
-                try {
-                    dbTableData();
-
-                } catch (SQLException ex) {
-                    return;
-                }
-            }
-            else if(item == "Author"){
-
-            }
-            else if(item == "Date Created"){
-                //
-            }
-            else if(item == "Date Last Edited"){
-                //
-            }
-        });
-
         // Temporary dummy table Data
         String[] columns = {"Title", "Author", "Date Created", "Date Edited", "Export?"};
         Object[][] data = {
@@ -93,7 +56,14 @@ public class mazeList extends menu {
         };
 
 
-        DefaultTableModel mazeTableModel = new DefaultTableModel(data, columns);
+        DefaultTableModel mazeTableModel = new DefaultTableModel(columns, 0);
+        mazeTableModel.addRow(new Object[]{"yes", "yes", "yes", "yes", false});
+
+        for (int i = 0; i < titleData.size(); i++)
+        {
+            mazeTableModel.addRow( new Object[]{ 1+i, titleData.get(i), authorData.get(i), dateCreatedData.get(i), dateEditedData.get(i), false} );
+        }
+
         JTable mazeJTable = new JTable(mazeTableModel) {
             public Class<?> getColumnClass(int column) {
                 return getValueAt(0, column).getClass();
@@ -105,6 +75,39 @@ public class mazeList extends menu {
         sp.setPreferredSize(new Dimension(550, 250));
         mazeList.add(sp);
         mainPanel.add(mazeList);
+
+        // Functionality of JComboBox
+        mazeComboBox.addActionListener(e -> {
+            Object item = mazeComboBox.getSelectedItem();
+            if(item == "Title"){
+                try {
+                    dbTableData("title");
+                } catch (SQLException ex) {
+                    return;
+                }
+            }
+            else if(item == "Author"){
+                try {
+                    dbTableData("author");
+                } catch (SQLException ex) {
+                    return;
+                }
+            }
+            else if(item == "Date Created"){
+                try {
+                    dbTableData("dateCreated");
+                } catch (SQLException ex) {
+                    return;
+                }
+            }
+            else if(item == "Date Last Edited"){
+                try {
+                    dbTableData("dateEdited");
+                } catch (SQLException ex) {
+                    return;
+                }
+            }
+        });
 
 
         // Creating Export Button
@@ -126,63 +129,43 @@ public class mazeList extends menu {
     }
 
     /**
-     * Counts the number of rows in the database
-     * @return count - the number of rows
+     * Stores data from 'mazeList' database table into arraylists
      * @throws SQLException
      */
-    public static int dbRowCount() throws SQLException { /// Deprecated function
-        // Counting the number of rows in the database.
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("select count(*) from mazeList;");
-        rs.next();
-        int count = rs.getInt(1);
-        statement.close();
-        connection.close();
-        return count;
-    }
-
-    /**
-     * Stores data from 'mazeList' database table into arrays
-     * @throws SQLException
-     */
-    public static int dbTableData() throws SQLException{
+    public static int dbTableData(String order) throws SQLException{
         Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
         Statement statement = connection.createStatement();
 
         // Storing title data
-        ResultSet rs1 = statement.executeQuery( "SELECT title FROM mazeList;" );
-        int columnCount = rs1.getMetaData().getColumnCount();
-        rs1.next();
-        for (int i = 0; i <columnCount ; i++)
-        {
-            titleData.add(rs1.getString(i + 1) );
+        ResultSet rs1 = statement.executeQuery( "SELECT title FROM mazeList ORDER BY " + order + ";" );
+        titleData.removeAll(titleData);
+        while (rs1.next()) {
+            titleData.add(rs1.getString(1));
         }
 
         // Storing author data
-        ResultSet rs2 = statement.executeQuery( "SELECT author FROM mazeList;" );
-        rs2.next();
-        for (int i = 0; i <columnCount ; i++)
-        {
-            authorData.add(rs2.getString(i + 1) );
+        ResultSet rs2 = statement.executeQuery( "SELECT author FROM mazeList ORDER BY " + order + ";" );
+        authorData.removeAll(authorData);
+        while (rs2.next()) {
+            authorData.add(rs2.getString(1));
         }
 
         // Storing dateCreated data
-        ResultSet rs3 = statement.executeQuery( "SELECT dateCreated FROM mazeList;" );
-        rs3.next();
-        for (int i = 0; i <columnCount ; i++)
-        {
-            dateCreatedData.add(rs3.getString(i + 1) );
+        ResultSet rs3 = statement.executeQuery( "SELECT dateCreated FROM mazeList ORDER BY " + order + ";" );
+        dateCreatedData.removeAll(dateCreatedData);
+        while (rs3.next()) {
+            dateCreatedData.add(rs3.getString(1));
         }
 
         // Storing dateEdited data
-        ResultSet rs4 = statement.executeQuery( "SELECT dateEdited FROM mazeList;" );
-        rs4.next();
-        for (int i = 0; i <columnCount ; i++)
-        {
-            dateEditedData.add(rs4.getString(i + 1) );
+        ResultSet rs4 = statement.executeQuery( "SELECT dateEdited FROM mazeList ORDER BY " + order + ";" );
+        dateEditedData.removeAll(dateEditedData);
+        while (rs4.next()) {
+            dateEditedData.add(rs4.getString(1));
         }
 
+        statement.close();
+        connection.close();
         return 0;
     }
 
