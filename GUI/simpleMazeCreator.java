@@ -5,7 +5,9 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class simpleMazeCreator extends menu {
-
+    /**
+     * Method to create the simple maze GUI
+     */
     public static void createSimpleMaze(){
 
         JFrame mazeCreatorFrame = new JFrame("Maze Creator");

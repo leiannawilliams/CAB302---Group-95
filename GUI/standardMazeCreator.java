@@ -1,7 +1,6 @@
 package GUI;
 
 import Maze.Drawing;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -13,8 +12,11 @@ import java.io.IOException;
 
 public class standardMazeCreator extends menu {
 
-    private static Drawing drawPanel2;
-    
+    private static Drawing drawPanel2; // Drawing canvas to display maze
+
+    /**
+     * Method to create the standard maze GUI
+     */
     public static void createStandardMaze(){
 
         JFrame mazeCreatorFrame = new JFrame("Maze Creator");

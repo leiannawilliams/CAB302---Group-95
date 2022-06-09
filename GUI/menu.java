@@ -9,7 +9,10 @@ import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
 
 public abstract class menu extends JFrame{
-
+    /**
+     *Method to create the file menu bar
+     *@return menuBar
+     */
     public static JMenuBar createMenuBar(){
         // CREATE MENU BAR
         JMenuBar menuBar = new JMenuBar();
@@ -40,6 +43,7 @@ public abstract class menu extends JFrame{
         // Action Listener to rename project
         rename.addActionListener(e -> {
             String renameProject = JOptionPane.showInputDialog(null, "Rename Project");
+            project.setTitle(renameProject);
         });
         JMenuItem undo = editMenu.add("Undo");
         JMenuItem delete = editMenu.add("Delete");

@@ -8,11 +8,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class mazeList extends menu {
-
+    /**
+     * Method to create the maze list GUI
+     */
     public static void createMazeList() {
 
         JFrame mazeListFrame = new JFrame("Maze Creator");
-        mazeListFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mazeListFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         mazeListFrame.setPreferredSize(new Dimension(600, 500));
 
         // Adding menu bar to frame
@@ -36,7 +38,6 @@ public class mazeList extends menu {
         comboPanel.add(mazeComboBox);
         titlePanel.add(comboPanel);
         mainPanel.add(titlePanel);
-
 
         // Creating a table with the list of all existing mazes
         JPanel mazeList = new JPanel();
@@ -111,6 +112,11 @@ public class mazeList extends menu {
         mazeListFrame.setVisible(true);
     }
 
+    /**
+     * Counts the number of rows in the database
+     * @return count - the number of rows
+     * @throws SQLException
+     */
     public static int dbRowCount() throws SQLException {
         // Counting the number of rows in the database.
         Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");

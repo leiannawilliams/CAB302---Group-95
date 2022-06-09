@@ -1,7 +1,6 @@
 package GUI;
 
 import Project.Project;
-
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -11,8 +10,13 @@ public class mainWindow extends menu {
 
     public static JFrame mainWindowFrame;
 
-    public static Project project = new Project();
+    public static Project project = new Project(); // Initialise project
 
+    /**
+     * Method to create the main window GUI
+     * @param project to create a maze project
+     * @throws SQLException SQL server error
+     */
     public void createMainWindow(Project project) throws SQLException {
         mainWindowFrame = new JFrame("Maze Creator");
         mainWindowFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -75,23 +79,25 @@ public class mainWindow extends menu {
         newProjectBtn.addActionListener(e -> {
             int result = JOptionPane.showConfirmDialog(null, popupPanel,
                     "Create New Project", JOptionPane.OK_CANCEL_OPTION);
-            // projectTitle = project.setTitle(titleField.getText());
-            // projectAuthor = project.setAuthor(authorField.getText());
             project.setTitle(titleField.getText());
             project.setAuthor(authorField.getText());
             if (result == JOptionPane.OK_OPTION) {
+                // Fields must be filled in
                  if(titleField.getText().isBlank() || authorField.getText().isBlank()){
                     JOptionPane.showMessageDialog(null, "Error: Please fill out fields before proceeding.");
                 }
+                // Open standard maze creator window
                 else if(standardMazeBtn.isSelected()){
                     mainWindowFrame.setVisible(false);
                     standardMazeCreator.createStandardMaze();
 
                 }
+                // Open simple maze creator window
                 else if(simpleMazeBtn.isSelected()){
                     mainWindowFrame.setVisible(false);
                     simpleMazeCreator.createSimpleMaze();
                 }
+                // Maze difficulty must be selected
                 else if(!simpleMazeBtn.isSelected() && !standardMazeBtn.isSelected()){
                     JOptionPane.showMessageDialog(null, "Error: Please select a maze difficulty.");
                 }
