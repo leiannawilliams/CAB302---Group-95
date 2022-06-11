@@ -5,24 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Removed menuBar from main window">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/xerial_sqlite_jdbc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sqlite-jdbc-3.36.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazeCreator.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CAB302---Group-95.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CAB302---Group-95.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mariadb_jdbc_java_client.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/mazeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/mazeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mariadb-java-client-3.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/CAB302---Group-95.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/CAB302---Group-95.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/libraries/mariadb_jdbc_java_client.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mazeList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/mazeList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/createDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mazeCreator.db" beforeDir="false" afterPath="$PROJECT_DIR$/mazeCreator.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/lib/mariadb-java-client-3.0.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/createDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/createDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/mazeCreator.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/mazeCreator.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +60,15 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Leianna\Documents\GitHub\CAB302---Group-95" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Maze" />
     </key>

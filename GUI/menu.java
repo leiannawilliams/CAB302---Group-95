@@ -1,6 +1,7 @@
 package GUI;
 
 import Maze.Drawing;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -10,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+
 import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
 import static GUI.standardMazeCreator.drawPanel2;
@@ -21,6 +23,7 @@ public abstract class menu extends JFrame{
      * @return menuBar
      */
     public static JMenuBar createMenuBar(){
+        
         // CREATE MENU BAR
         JMenuBar menuBar = new JMenuBar();
 
@@ -33,14 +36,6 @@ public abstract class menu extends JFrame{
         // Action Listener to view list of maze projects (this will direct the user to the maze list window)
         viewProjects.addActionListener(e -> mazeList.createMazeList());
         JMenuItem save = fileMenu.add("Save");
-        // Catches SQLException to save the current project to the mazeList table of the database
-        save.addActionListener(e -> {
-            try {
-                Project.Project.save();
-            } catch (SQLException ex) {
-                return;
-            }
-        });
         JMenuItem export = fileMenu.add("Export");
         // Action listener to export maze as image file
         export.addActionListener(e -> {
@@ -76,6 +71,14 @@ public abstract class menu extends JFrame{
             }
         });
         menuBar.add(fileMenu);
+        // Catches SQLException to save the current project to the mazeList table of the database
+        save.addActionListener(e -> {
+            try {
+                Project.Project.updateDatabase(project.getTitle(), project.getAuthor(), project.setCreationDate(), project.setLastEdit());
+            } catch (SQLException ex) {
+                return;
+            }
+        });
 
         // EDIT MENU
         JMenu editMenu = new JMenu("Edit");
