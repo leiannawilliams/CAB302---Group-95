@@ -48,17 +48,14 @@ public class mazeList extends menu {
         // Creating a table with the list of all existing mazes
         JPanel mazeList = new JPanel();
 
-        // Temporary dummy table Data
+        // JTable column headings
         String[] columns = {"Title", "Author", "Date Created", "Date Edited", "Export?"};
-        Object[][] data = {
-                {"Doggy Maze", "Bob Ross", "27-04-2022 11:27:03", "27-04-2022 11:27:03", false},
-                {"Awesome Maze", "Bob Ross", "27-04-2022 11:27:03", "27-04-2022 11:27:03", false},
-        };
 
-
+        // Creating JTable with no rows
         DefaultTableModel mazeTableModel = new DefaultTableModel(columns, 0);
 
         JTable mazeJTable = new JTable(mazeTableModel) {
+            // Creating boolean checkbox inside the 'Export?' column.
             public Class<?> getColumnClass(int column) {
                 return getValueAt(0, column).getClass();
             }
@@ -125,6 +122,9 @@ public class mazeList extends menu {
                     return;
                 }
             }
+            else if(item == ""){
+                mazeTableModel.setRowCount(0);
+            }
         });
 
 
@@ -151,7 +151,7 @@ public class mazeList extends menu {
      * @throws SQLException
      */
     public static int dbTableData(String order) throws SQLException{
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:mazeCreator.db");
         Statement statement = connection.createStatement();
 
         // Storing title data in ListArray

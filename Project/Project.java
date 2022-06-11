@@ -77,7 +77,7 @@ public class Project {
 
     public static int updateDatabase(String title, String author, String dateCreated, String dateEdited) throws SQLException {
         // Adding project information to database -- title, author, date edited, date created.
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mazecreator", "root", "password");
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:mazeCreator.db");
         Statement statement = connection.createStatement();
         int project = statement.executeUpdate("INSERT INTO mazeList VALUES ('" + title + "', '" + author + "', '" + dateCreated + "', '" + dateEdited + "');");
         statement.close();
