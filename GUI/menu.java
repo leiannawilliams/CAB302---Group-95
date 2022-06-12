@@ -1,21 +1,19 @@
 package GUI;
 
 import Maze.Drawing;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-
 import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
-import static GUI.standardMazeCreator.drawPanel2;
-import static GUI.standardMazeCreator.pane2;
+import static GUI.standardMazeCreator.*;
 
 public abstract class menu extends JFrame{
     /**
@@ -196,5 +194,24 @@ public abstract class menu extends JFrame{
         generatePnl.setLayout(new GridBagLayout());
         generatePnl.add(buttonPanel);
         return generatePnl;
+    }
+
+    /**
+     * Method to create a JButton
+     * @param str Button title
+     * @param listener event listener
+     * @return button
+     */
+    public static JButton createButton(String str, ActionListener listener){
+        //Create JButton
+        JButton button = new JButton();
+        //Set button text
+        button.setText(str);
+        //Set button font
+        button.setFont(new Font("Serif",Font.BOLD,18));
+        //Add listener
+        button.addActionListener(listener);
+        //Return button
+        return button;
     }
 }
