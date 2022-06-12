@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import static GUI.standardMazeCreator.*;
 
+/* The EventHandler class contains all methods to handle button events  */
+
 public class EventHandler implements ActionListener {
     /**
      * 'Browse' button functionality to look for image
@@ -33,7 +35,6 @@ public class EventHandler implements ActionListener {
                 File image = new File(imgChooser.getSelectedFile().getAbsolutePath());
                 // Display file path of selected image in text field
                 displayImg.setText(image.getAbsolutePath());
-
             } catch (Exception ae){
 
             } // try and catch

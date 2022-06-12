@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="New class 'EventHandler' to handle JButton Events">
+    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Improved style panel layout in standardMazeCreator">
+      <change beforePath="$PROJECT_DIR$/.idea/CAB302---Group-95.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CAB302---Group-95.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/simpleMazeCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/standardMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/standardMazeCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maze/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Drawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maze/Drawing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maze/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/CAB302---Group-95.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/CAB302---Group-95.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Drawing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Drawing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Project/Project.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -56,6 +66,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -68,34 +82,103 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Maze" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Project" />
+      <recent name="Maze" />
+      <recent name="GUI" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.DrawingTest.getPreferredSize">
+    <configuration name="DrawingTest.Drawing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.DrawingTest" />
+      <option name="METHOD_NAME" value="Drawing" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Maze.Maze" />
+    <configuration name="DrawingTest.drawMaze" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.DrawingTest" />
+      <option name="METHOD_NAME" value="drawMaze" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="createDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="createDatabase" />
+    <configuration name="DrawingTest.getPreferredSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.DrawingTest" />
+      <option name="METHOD_NAME" value="getPreferredSize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GridTest.generate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.GridTest" />
+      <option name="METHOD_NAME" value="generate(int)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectTest.updateDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.ProjectTest" />
+      <option name="METHOD_NAME" value="updateDatabase" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.createDatabase" />
-        <item itemvalue="Application.Maze" />
+        <item itemvalue="JUnit.DrawingTest.getPreferredSize" />
+        <item itemvalue="JUnit.DrawingTest.Drawing" />
+        <item itemvalue="JUnit.GridTest.generate" />
+        <item itemvalue="JUnit.DrawingTest.drawMaze" />
+        <item itemvalue="JUnit.ProjectTest.updateDatabase" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655014539549</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Improved style panel layout in standardMazeCreator">
+      <created>1655018726147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655018726148</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +343,8 @@
     <MESSAGE value="Removed menuBar from main window" />
     <MESSAGE value="Added method to create Jbutton" />
     <MESSAGE value="New class 'EventHandler' to handle JButton Events" />
-    <option name="LAST_COMMIT_MESSAGE" value="New class 'EventHandler' to handle JButton Events" />
+    <MESSAGE value="Improved style panel layout in standardMazeCreator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved style panel layout in standardMazeCreator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

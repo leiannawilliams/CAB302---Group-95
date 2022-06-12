@@ -3,13 +3,18 @@ package Maze;
 /* Maze generation algorithm
  * Andras Szabo. (2019). Retrieved from: https://github.com/bandi22/java-swing-maze
  */
+
 import java.util.Random;
 import java.util.Stack;
 
 public class Grid {
 
-    Cell[] cells;
+    Cell[] cells; // Store cells in array to create maze grid
 
+    /**
+     * Generates cells on a grid
+     * @param n integer used to set up coordinates of cell on the grid
+     */
     public void generate (int n)
     {
 
@@ -122,6 +127,11 @@ public class Grid {
 
     } //generate
 
+    /**
+     * Maze generation algorithm to create maze
+     * @param grid cell grid.
+     * Starts with cell walls up. If neighbouring cell is unvisited, it will knock down walls
+     */
     public void createMaze (Grid grid)
     {
 

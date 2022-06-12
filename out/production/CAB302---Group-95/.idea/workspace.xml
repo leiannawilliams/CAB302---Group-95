@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Removed menuBar from main window" />
+    <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Improved style panel layout in standardMazeCreator">
+      <change beforePath="$PROJECT_DIR$/.idea/CAB302---Group-95.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CAB302---Group-95.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/EventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maze/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/CAB302---Group-95.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/CAB302---Group-95.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/EventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/simpleMazeCreator.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +28,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -49,6 +60,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -61,17 +76,16 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Maze" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="GUI" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="CAB302---Group-95" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Maze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Maze.Maze" />
       <module name="CAB302---Group-95" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -84,11 +98,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EventHandlerTest.actionPerformed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.EventHandlerTest" />
+      <option name="METHOD_NAME" value="actionPerformed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventHandlerTest.browseButtonClicked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.EventHandlerTest" />
+      <option name="METHOD_NAME" value="browseButtonClicked" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventHandlerTest.generateButtonClicked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CAB302---Group-95" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.EventHandlerTest" />
+      <option name="METHOD_NAME" value="generateButtonClicked" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.EventHandlerTest.actionPerformed" />
+        <item itemvalue="JUnit.EventHandlerTest.generateButtonClicked" />
+        <item itemvalue="JUnit.EventHandlerTest.browseButtonClicked" />
         <item itemvalue="Application.createDatabase" />
-        <item itemvalue="Application.Maze" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +259,35 @@
       <option name="project" value="LOCAL" />
       <updated>1654758582895</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added method to create Jbutton">
+      <created>1655014226089</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655014226089</updated>
+    </task>
+    <task id="LOCAL-00015" summary="New class 'EventHandler' to handle JButton Events">
+      <created>1655014516055</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655014516056</updated>
+    </task>
+    <task id="LOCAL-00016" summary="New class 'EventHandler' to handle JButton Events">
+      <created>1655014539549</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655014539549</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Improved style panel layout in standardMazeCreator">
+      <created>1655018726147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655018726148</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +315,10 @@
     <MESSAGE value="create details panel changed to method in menu class" />
     <MESSAGE value="Javadoc &amp; commenting in GUI package" />
     <MESSAGE value="Removed menuBar from main window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed menuBar from main window" />
+    <MESSAGE value="Added method to create Jbutton" />
+    <MESSAGE value="New class 'EventHandler' to handle JButton Events" />
+    <MESSAGE value="Improved style panel layout in standardMazeCreator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved style panel layout in standardMazeCreator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -233,11 +328,10 @@
           <line>128</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/GUI/menu.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
