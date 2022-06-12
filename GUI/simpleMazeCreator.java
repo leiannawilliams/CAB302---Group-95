@@ -40,6 +40,7 @@ public class simpleMazeCreator extends menu {
         // Text field to display start image file path
         JPanel startImgPanel = new JPanel();
         startImg = new JTextField("Browse for image");
+        startImg.setEditable(false);
         startImgPanel.add(startImg);
         stylePanel.add(startImgPanel);
         stylePanel.add(createButton("Browse", e -> EventHandler.browseButtonClicked(e, startImg)));
@@ -50,6 +51,7 @@ public class simpleMazeCreator extends menu {
         // Text field to display end image file path
         JPanel endImgPanel = new JPanel();
         endImg = new JTextField("Browse for image");
+        endImg.setEditable(false);
         endImgPanel.add(endImg);
         stylePanel.add(endImgPanel);
         stylePanel.add(createButton("Browse", e -> EventHandler.browseButtonClicked(e, endImg)));

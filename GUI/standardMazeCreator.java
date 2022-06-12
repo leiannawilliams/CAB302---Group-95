@@ -32,35 +32,50 @@ public class standardMazeCreator extends menu {
         // Details contents
         JPanel detailsPanel = detailsPanel();
         pane1.add(detailsPanel);
-        // Style contents
-        JPanel stylePanel = new JPanel(new GridLayout(2,2));
+
+        /* STYLE CONTENTS */
+        JPanel stylePanel = new JPanel(new GridLayout(2,1));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
         ((TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 16));
+        /* Image Panel */
+        JPanel imgPanel = new JPanel(new GridLayout(1, 3));
+        // Label
         JLabel imageText = new JLabel("  Logo Image:");
-        imageText.setFont(new Font ("Serif", Font.PLAIN, 20));
-        stylePanel.add(imageText);
-        JPanel selectedImgPanel = new JPanel();
-        selectedImgPanel.setLayout(new GridBagLayout());
+        imageText.setFont(new Font ("Serif", Font.PLAIN, 18));
+        // Add label to image panel
+        imgPanel.add(imageText);
         // Text field for displaying image file path
         JTextField selectedImg = new JTextField("Browse for image");
-        selectedImgPanel.add(selectedImg);
-        stylePanel.add(selectedImgPanel);
+        selectedImg.setEditable(false);
+        // Add text field to image panel
+        imgPanel.add(selectedImg);
+        // Browse button panel
         JPanel browseButtonPanel = new JPanel();
         browseButtonPanel.setLayout(new GridBagLayout());
-        JButton browseButton = new JButton("Browse");
-        browseButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        JButton browseButton = createButton("Browse", e -> EventHandler.browseButtonClicked(e, selectedImg));
+        browseButton.setFont(new Font("Serif", Font.PLAIN, 18));
         browseButtonPanel.add(browseButton);
-        stylePanel.add(browseButtonPanel);
-        JPanel sizePanel = new JPanel();
-        sizePanel.setLayout(new GridBagLayout());
-        sizePanel.add(new JLabel("Set preferred maze size: "));
+        // Add browse button panel to image panel
+        imgPanel.add(browseButtonPanel);
+        // Add image panel to style panel
+        stylePanel.add(imgPanel);
+        /* Size panel */
+        JPanel sizePanel = new JPanel(new GridLayout(1, 2));
+        // Label
+        JLabel sizeText = new JLabel("Set preferred maze size: ");
+        sizeText.setFont(new Font ("Serif", Font.PLAIN, 18));
+        // Add label to size panel
+        sizePanel.add(sizeText);
+        // Text field
         sizeInput = new JTextField();
-        sizeInput.setPreferredSize(new Dimension(80,20));
-        sizeInput.setMinimumSize(new Dimension(80,20));
+        sizeInput.setPreferredSize(new Dimension(20,10));
         sizeInput.grabFocus();
+        // Add text field to size panel
         sizePanel.add(sizeInput);
+        // Add size panel to style panel
         stylePanel.add(sizePanel);
         pane1.add(stylePanel);
+
         //Metrics contents
         JPanel metricsPnl = metricsPanel();
         pane1.add(metricsPnl);
