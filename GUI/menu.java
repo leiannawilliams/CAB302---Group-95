@@ -1,21 +1,24 @@
 package GUI;
 
-import Maze.Drawing;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+
 import static GUI.mainWindow.mainWindowFrame;
 import static GUI.mainWindow.project;
 import static GUI.standardMazeCreator.*;
 
 public abstract class menu extends JFrame{
+
+    public static int generateInt = 0;
     /**
      * Method to create the file menu bar
      * @return menuBar
@@ -37,16 +40,19 @@ public abstract class menu extends JFrame{
         JMenuItem export = fileMenu.add("Export");
         // Action listener to export maze as image file
         export.addActionListener(e -> {
-            if (drawPanel2 != null){
+            if (generateInt == 0){
+                JOptionPane.showMessageDialog(null, "Error: Please generate a new maze first.");
+            }
+            if (generateInt == 1){
                 JFileChooser jfc = new JFileChooser();
                 jfc.setFileFilter(new FileNameExtensionFilter("Image (jpeg, jpg, png)", "jpeg", "jpg", "png"));
 
                 jfc.setDialogTitle("Save maze as image");
                 int saveResult = jfc.showSaveDialog(export);
 
-                BufferedImage componentImage = new BufferedImage(drawPanel2.getWidth(), drawPanel2.getHeight(), BufferedImage.TYPE_INT_RGB);
+                BufferedImage componentImage = new BufferedImage(mazePane.getWidth(), mazePane.getHeight(), BufferedImage.TYPE_INT_RGB);
                 Graphics2D g2d = componentImage.createGraphics();
-                drawPanel2.paint(g2d);
+                mazePane.paint(g2d);
 
                 File imageFile = jfc.getSelectedFile();
                 File imageFileJPG = new File(imageFile.toString()+".jpg");
@@ -141,6 +147,42 @@ public abstract class menu extends JFrame{
         return detailsPnl;
     }
 
+
+    /**
+     * Method to create generate panel in standard maze creator
+     * @param sizeInput size of maze determined by user input
+     * @return generatePnl
+     */
+    public static JPanel generatePanel(JTextField sizeInput){
+        JPanel generatePnl = new JPanel();
+        JPanel buttonPanel = new JPanel();
+        JButton generateButton = new JButton(new AbstractAction("Generate Maze") {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String text = sizeInput.getText();
+                int mazeSizeInput = Integer.parseInt(text);
+                mazeSizeInput = ((mazeSizeInput+5)/10)*10+1; //rounds maze to the nearest working size.
+                mazePane.refresh(mazeSizeInput);
+                mazePane.repaint();
+            }
+        });
+
+        generateButton.setFont(new Font("Serif", Font.BOLD, 20));
+        buttonPanel.add(generateButton);
+        generatePnl.setLayout(new GridBagLayout());
+        generatePnl.add(buttonPanel);
+
+        // Generate button functionality
+        generateButton.addActionListener(ae -> {
+            generateInt = 1;
+
+        });
+        return generatePnl;
+    }
+
+
     /**
      * Method to create metrics panel
      * @return metricsPnl
@@ -152,34 +194,25 @@ public abstract class menu extends JFrame{
         metricsPnl.add(new JLabel("Percentage of cells that are reached by an optimal solution: 50%")); // temporary dummy data
         metricsPnl.add(new JLabel("Percentage of cells that are dead ends: 12%")); // temporary dummy data
         JCheckBox solutionCheckBox = new JCheckBox("Show Optimal Maze Solution");
+
+        solutionCheckBox.addActionListener(e -> {
+
+            if(generateInt == 0){
+                JOptionPane.showMessageDialog(null, "Error: Please generate a new maze first.");
+            }
+
+            if (solutionCheckBox.isSelected() & generateInt == 1) {
+                    mazePane.autoMove((Graphics2D) mazePane.getGraphics());
+                }
+            else if(!solutionCheckBox.isSelected()& generateInt == 1){
+                mazePane.repaint();
+            }
+        });
+
         metricsPnl.add(solutionCheckBox);
         return metricsPnl;
     }
 
-    /**
-     * Method to create generate panel in standard maze creator
-     * @param sizeInput size of maze determined by user input
-     * @return generatePnl
-     */
-    public static JPanel generatePanel(JTextField sizeInput){
-        JPanel generatePnl = new JPanel();
-        JPanel buttonPanel = new JPanel();
-        JButton generateButton = new JButton("Generate Maze");
-        generateButton.setFont(new Font("Serif", Font.BOLD, 20));
-        buttonPanel.add(generateButton);
-        generatePnl.setLayout(new GridBagLayout());
-        generatePnl.add(buttonPanel);
-
-        // Generate button functionality
-        generateButton.addActionListener(ae -> {
-            Drawing drawPanel = new Drawing(sizeInput);
-            drawPanel.setBackground(Color.WHITE);
-            pane2.getViewport().add(drawPanel);
-
-            drawPanel2 = drawPanel;
-        });
-        return generatePnl;
-    }
 
     /**
      * Method to create generate panel in simple maze creator

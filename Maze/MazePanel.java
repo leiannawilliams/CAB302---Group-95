@@ -1,0 +1,206 @@
+// MAZE ALGORITHM BY Puskin2911
+// https://github.com/Puskin2911/Maze-Game
+
+package Maze;
+
+import api.Position;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.geom.Rectangle2D;
+import java.util.Stack;
+
+public class MazePanel extends JPanel implements KeyListener {
+    private static final long serialVersionUID = 1L;
+    private Rectangle2D[][] cells;
+    private static final int dimension = 600;
+    private int[][] array;
+    private int cellsMaze;
+    private float cell_size;
+    private Position start;
+    private Position end;
+    private Position current;
+    private int delay = 100;
+    public Maze maze;
+
+    public MazePanel(int cellsMaze) {
+        addKeyListener(this);
+        refresh(cellsMaze);
+    }
+
+    public int getCellsMaze() {
+        return this.cellsMaze;
+    }
+
+    public void refresh(int cellsMaze) {
+        this.cellsMaze = cellsMaze;
+        setSize(dimension, dimension);
+        cell_size = (float) (1.0 * dimension / cellsMaze);
+
+        setFocusable(true);
+
+        // Maze Object
+        maze = new Maze(cellsMaze - 2);
+        array = maze.getArray();
+
+        // Set Position
+        start = current = new Position(1, 0);
+        end = new Position(cellsMaze - 2, cellsMaze - 1);
+
+        // Set maze on panel
+        cells = new Rectangle2D[cellsMaze][cellsMaze];
+        for (int i = 0; i < cellsMaze; i++) {
+            for (int j = 0; j < cellsMaze; j++) {
+                cells[i][j] = new Rectangle2D.Double(j * cell_size, i * cell_size, cell_size, cell_size);
+            }
+        }
+    }
+
+    /**
+     * Fill maze on panel by Graphics2D.
+     *
+     * @param Graphics2D
+     * @return void
+     * @author Hulk
+     */
+    private void drawMaze(Graphics2D g2d) {
+        for (int i = 0; i < cellsMaze; i++) {
+            for (int j = 0; j < cellsMaze; j++) {
+                if (array[i][j] == 0) {
+                    g2d.setColor(Color.WHITE);
+                } else {
+                    g2d.setColor(Color.BLACK);
+                }
+                g2d.fill(cells[i][j]);
+            }
+        }
+
+        // Fill first cell
+        int x = start.getX();
+        int y = start.getY();
+
+        g2d.setColor(Color.GREEN);
+        g2d.fill(cells[x][y]);
+
+        // Fill end cell
+        int x2 = end.getX();
+        int y2 = end.getY();
+
+        g2d.setColor(Color.GREEN);
+        g2d.fill(cells[x2][y2]);
+    }
+
+    public void autoMove(Graphics2D g2d) {
+        Stack<Position> way = maze.getDirectWay(start, end);
+        g2d.setColor(Color.GREEN);
+        while (!way.empty()) {
+            Position next = way.pop();
+            int x = next.getX();
+            int y = next.getY();
+            g2d.fill(cells[x][y]);
+        }
+    }
+
+
+    private boolean passed() {
+        return current.equals(end);
+    }
+
+    private void move(Graphics2D g2d, Position current) {
+        int x = current.getX();
+        int y = current.getY();
+
+        update((Graphics2D) this.getGraphics());
+
+        g2d.setColor(Color.GREEN);
+        g2d.fill(cells[x][y]);
+
+        // Check win
+        if(passed()) {
+            JOptionPane.showMessageDialog(getParent(), "You win", "Congratulation", JOptionPane.PLAIN_MESSAGE);
+            refresh(this.cellsMaze);
+            repaint();
+        }
+    }
+
+    // Problem
+    public void hint() {
+        Stack<Position> way = maze.getDirectWay(start, end);
+        way.pop();
+        Position next = way.pop();
+        int x = next.getX();
+        int y = next.getY();
+        Graphics2D g2d = (Graphics2D) getGraphics();
+        g2d.setColor(Color.RED);
+        g2d.fill(cells[x][y]);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        drawMaze((Graphics2D) g);
+    }
+
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_W) {
+            if (maze.canMoveUp(current)) {
+                current.setX(current.getX() - 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            if (maze.canMoveRight(current)) {
+                current.setY(current.getY() + 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_S) {
+            if (maze.canMoveDown(current)) {
+                current.setX(current.getX() + 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            if (maze.canMoveLeft(current)) {
+                current.setY(current.getY() - 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            if (maze.canMoveUp(current)) {
+                current.setX(current.getX() - 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (maze.canMoveRight(current)) {
+                current.setY(current.getY() + 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            if (maze.canMoveDown(current)) {
+                current.setX(current.getX() + 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            if (maze.canMoveLeft(current)) {
+                current.setY(current.getY() - 1);
+                move((Graphics2D) getGraphics(), current);
+            }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_H) {
+            hint();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
+}

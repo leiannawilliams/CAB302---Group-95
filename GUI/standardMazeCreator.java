@@ -1,15 +1,21 @@
 package GUI;
 
-import Maze.Drawing;
+import Maze.MazePanel;
+
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class standardMazeCreator extends menu {
 
-    public static JScrollPane pane2; // Scroll pane for the drawing canvas
-    public static Drawing drawPanel2; // Drawing canvas to display maze
     public static JTextField sizeInput; // Text filed for maze size input
+
+    private static final long serialVersionUID = 1L;
+    public static int mazeSize;
+    static JPanel contentPane;
+    static JSplitPane mazeSplitPane;
+    static MazePanel mazePane;
 
     /**
      * Method to create the standard maze GUI
@@ -70,21 +76,29 @@ public class standardMazeCreator extends menu {
 
 
         // Maze -- Right side of Split Pane -- Pane 2
-        pane2 = new JScrollPane();
-        pane2.setAutoscrolls(true);
-        pane2.setPreferredSize(new Dimension(500, 500));
+        contentPane = new JPanel();
+
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setLayout(new BorderLayout(0, 0));
+        mazeSize = 51;
+        standardMazeCreator.mazePane = new MazePanel(mazeSize);
+        contentPane.add(mazePane, BorderLayout.CENTER);
 
 
         // Creating Split Pane
-        JSplitPane mazeSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, pane1, pane2);
+        mazeSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, pane1, contentPane);
         mazeSplitPane.setOrientation(SwingConstants.VERTICAL);
         mazeSplitPane.setDividerLocation(400);
+
         mazeCreatorFrame.add(mazeSplitPane);
+
 
         mazeCreatorFrame.pack();
         mazeCreatorFrame.setLocationRelativeTo(null);
         mazeCreatorFrame.setResizable(false);
         mazeCreatorFrame.setVisible(true);
-
     }
+
+
+
 }

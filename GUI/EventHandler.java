@@ -1,13 +1,10 @@
 package GUI;
 
-import Maze.Drawing;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import static GUI.standardMazeCreator.*;
 
 public class EventHandler implements ActionListener {
     /**
@@ -48,11 +45,7 @@ public class EventHandler implements ActionListener {
      * @param ae event listener
      */
     public static void generateButtonClicked(ActionEvent ae){
-        Drawing drawPanel = new Drawing(sizeInput);
-        drawPanel.setBackground(Color.WHITE);
-        pane2.getViewport().add(drawPanel);
-
-        drawPanel2 = drawPanel;
+        //
     }
 
     @Override
