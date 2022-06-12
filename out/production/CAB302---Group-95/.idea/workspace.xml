@@ -7,9 +7,23 @@
     <list default="true" id="165a2824-cbaf-4487-92c3-baf420f6f4d3" name="Changes" comment="Added method to create Jbutton">
       <change afterPath="$PROJECT_DIR$/Maze/MazeGUI.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Maze/MazePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maze/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/EventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/standardMazeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/standardMazeCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Cell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Drawing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maze/Grid.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Maze/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/Maze/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/EventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/GUI/standardMazeCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Drawing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Grid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Maze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAB302---Group-95/Maze/Maze.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +82,7 @@
       <recent name="$PROJECT_DIR$/Maze" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MazeGUI">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="CAB302---Group-95" />
@@ -88,7 +102,7 @@
       <module name="CAB302---Group-95" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Maze.*" />
+          <option name="PATTERN" value="api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MazeGUI" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MazeGUI" />
         <item itemvalue="Application.createDatabase" />
         <item itemvalue="Application.Maze" />
       </list>
