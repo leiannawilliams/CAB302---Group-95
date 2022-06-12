@@ -13,13 +13,7 @@ public class Project {
      * <b>lastEdited</b> will use DateTimeFormatter to store the date and time of the last edit of a maze.
      */
 
-    private String title;
-    private String author;
-
-    /* public Project(String title, String author) {
-        this.title = title;
-        this.author = author;
-    }*/
+    private String title, author;
 
     /* GETTER & SETTER METHODS */
 
@@ -70,6 +64,15 @@ public class Project {
 
     /* DATABASE METHODS */
 
+    /**
+     * Stores project information into database
+     * @param title maze project title
+     * @param author maze project author
+     * @param dateCreated date created of maze project
+     * @param dateEdited date edited of maze project
+     * @return 0 .
+     * @throws SQLException SQL server error
+     */
     public static int updateDatabase(String title, String author, String dateCreated, String dateEdited) throws SQLException {
         // Adding project information to database -- title, author, date edited, date created.
         Connection connection = DriverManager.getConnection("jdbc:sqlite:mazeCreator.db");
@@ -80,20 +83,4 @@ public class Project {
         return 0;
     }
 
-
-
-    /* OTHER METHODS */
-
-    private void open(){
-
-    }
-
-
-    private void edit(){
-
-    }
-
-    private void export(){
-
-    }
 }
