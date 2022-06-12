@@ -4,6 +4,6 @@
 
 <b> Contributors: </b>
   <ul>
-    <li> Pauline Campos&emsp; @pcamp44 </li>
-    <li> Leianna Williams&emsp; @leiannawilliams </li>
+    <li> Pauline Campos (n10003894)&emsp; @pcamp44 </li>
+    <li> Leianna Williams (n10995111)&emsp; @leiannawilliams </li>
   </ul>
