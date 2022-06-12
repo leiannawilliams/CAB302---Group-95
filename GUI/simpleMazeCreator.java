@@ -5,6 +5,9 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class simpleMazeCreator extends menu {
+
+    private static JTextField startImg, endImg; // Text fields to display image file path
+
     /**
      * Method to create the simple maze GUI
      */
@@ -17,7 +20,6 @@ public class simpleMazeCreator extends menu {
         // Adding menu bar to frame
         mazeCreatorFrame.setJMenuBar(menu.createMenuBar());
 
-
         // Maze Editor and Details -- Left side of Split Pane -- Pane 1
         JPanel pane1 = new JPanel(new GridLayout(5, 1));
         // Title
@@ -26,19 +28,33 @@ public class simpleMazeCreator extends menu {
         // Details contents
         JPanel detailsPanel = detailsPanel();
         pane1.add(detailsPanel);
-        // Style contents
-        JPanel stylePanel = new JPanel(new GridLayout(2,2));
+
+        /* STYLE CONTENTS */
+        JPanel stylePanel = new JPanel(new GridLayout(2,3));
         stylePanel.setBorder(BorderFactory.createTitledBorder("Style"));
         ((TitledBorder) stylePanel.getBorder()).setTitleFont(new Font("Serif", Font.BOLD, 20));
+        /* Start image panel */
         JLabel startImageText = new JLabel("Start image:");
-        startImageText.setFont(new Font ("Serif", Font.PLAIN, 22));
+        startImageText.setFont(new Font ("Serif", Font.PLAIN, 18));
         stylePanel.add(startImageText);
-        stylePanel.add(new JButton("Browse"));
+        // Text field to display start image file path
+        JPanel startImgPanel = new JPanel();
+        startImg = new JTextField("Browse for image");
+        startImgPanel.add(startImg);
+        stylePanel.add(startImgPanel);
+        stylePanel.add(createButton("Browse", e -> EventHandler.browseButtonClicked(e, startImg)));
+        /* End image panel */
         JLabel endImageText = new JLabel("End image:");
-        endImageText.setFont(new Font ("Serif", Font.PLAIN, 22));
+        endImageText.setFont(new Font ("Serif", Font.PLAIN, 18));
         stylePanel.add(endImageText);
-        stylePanel.add(new JButton("Browse"));
+        // Text field to display end image file path
+        JPanel endImgPanel = new JPanel();
+        endImg = new JTextField("Browse for image");
+        endImgPanel.add(endImg);
+        stylePanel.add(endImgPanel);
+        stylePanel.add(createButton("Browse", e -> EventHandler.browseButtonClicked(e, endImg)));
         pane1.add(stylePanel);
+
         //Metrics contents
         JPanel metricsPnl = metricsPanel();
         pane1.add(metricsPnl);

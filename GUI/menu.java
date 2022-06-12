@@ -188,8 +188,7 @@ public abstract class menu extends JFrame{
     public static JPanel generatePanel(){
         JPanel generatePnl = new JPanel();
         JPanel buttonPanel = new JPanel();
-        JButton generateButton = new JButton("Generate Maze");
-        generateButton.setFont(new Font("Serif", Font.BOLD, 20));
+        JButton generateButton = createButton("Generate Maze", EventHandler::generateButtonClicked);
         buttonPanel.add(generateButton);
         generatePnl.setLayout(new GridBagLayout());
         generatePnl.add(buttonPanel);
